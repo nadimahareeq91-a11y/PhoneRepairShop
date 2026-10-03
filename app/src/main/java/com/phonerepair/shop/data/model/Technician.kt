@@ -36,7 +36,7 @@ data class Technician(
         GENERAL("عام")
     }
 
-    enum class SkillLevel(val displayName: String, val color: Int, val baseCommission: Double) {
+    enum class SkillLevel(val displayName: String, val color: Long, val baseCommission: Double) {
         JUNIOR("مبتدئ", 0xFF4CAF50, 0.05),
         INTERMEDIATE("متوسط", 0xFF2196F3, 0.10),
         SENIOR("خبير", 0xFFFF9800, 0.15),

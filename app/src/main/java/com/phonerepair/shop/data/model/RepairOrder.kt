@@ -33,7 +33,7 @@ data class RepairOrder(
     val warrantyDays: Int = 30,
     val isSynced: Boolean = false
 ) {
-    enum class RepairStatus(val displayName: String, val color: Int) {
+    enum class RepairStatus(val displayName: String, val color: Long) {
         RECEIVED("تم الاستلام", 0xFF2196F3),
         DIAGNOSING("قيد التشخيص", 0xFFFF9800),
         WAITING_PARTS("بانتظار القطع", 0xFF9C27B0),
@@ -45,7 +45,7 @@ data class RepairOrder(
         ON_HOLD("معلق", 0xFF607D8B)
     }
 
-    enum class Priority(val displayName: String, val color: Int) {
+    enum class Priority(val displayName: String, val color: Long) {
         LOW("منخفضة", 0xFF4CAF50),
         NORMAL("عادية", 0xFF2196F3),
         HIGH("عالية", 0xFFFF9800),
@@ -64,7 +64,7 @@ data class UsedPart(
     val unitPrice: Double,
     val totalPrice: Double
 ) {
-    fun toMap(): Map<String, Any> = mapOf(
+    fun toMap(): Map<String, Any?> = mapOf(
         "partId" to partId,
         "partName" to partName,
         "quantity" to quantity,
@@ -73,7 +73,7 @@ data class UsedPart(
     )
 
     companion object {
-        fun fromMap(map: Map<String, Any>): UsedPart = UsedPart(
+        fun fromMap(map: Map<String, Any?>): UsedPart = UsedPart(
             partId = map["partId"] as String,
             partName = map["partName"] as String,
             quantity = map["quantity"] as Int,

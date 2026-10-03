@@ -27,6 +27,21 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextFieldColors
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDownward
+import androidx.compose.material.icons.filled.ArrowUpward
+import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Cancel
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.DoneAll
+import androidx.compose.material.icons.filled.Help
+import androidx.compose.material.icons.filled.Inventory
+import androidx.compose.material.icons.filled.LocalShipping
+import androidx.compose.material.icons.filled.PauseCircle
+import androidx.compose.material.icons.filled.PriorityHigh
+import androidx.compose.material.icons.filled.Remove
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Verified
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -320,25 +335,25 @@ fun PriorityChip(priority: String, modifier: Modifier = Modifier) {
         "URGENT" -> StatusChip(
             text = "عاجل",
             color = Color(0xFFF44336),
-            icon = androidx.compose.material.icons.Icons.Default.PriorityHigh,
+            icon = Icons.Filled.PriorityHigh,
             modifier = modifier
         )
         "HIGH" -> StatusChip(
             text = "عالية",
             color = Color(0xFFFF9800),
-            icon = androidx.compose.material.icons.Icons.Default.ArrowUpward,
+            icon = Icons.Filled.ArrowUpward,
             modifier = modifier
         )
         "NORMAL" -> StatusChip(
             text = "عادية",
             color = Color(0xFF2196F3),
-            icon = androidx.compose.material.icons.Icons.Default.Remove,
+            icon = Icons.Filled.Remove,
             modifier = modifier
         )
         "LOW" -> StatusChip(
             text = "منخفضة",
             color = Color(0xFF4CAF50),
-            icon = androidx.compose.material.icons.Icons.Default.ArrowDownward,
+            icon = Icons.Filled.ArrowDownward,
             modifier = modifier
         )
         else -> StatusChip(
@@ -352,16 +367,16 @@ fun PriorityChip(priority: String, modifier: Modifier = Modifier) {
 @Composable
 fun RepairStatusChip(status: String, modifier: Modifier = Modifier) {
     val (text, color, icon) = when (status) {
-        "RECEIVED" -> "تم الاستلام" to Color(0xFF2196F3) to androidx.compose.material.icons.Icons.Default.Inventory
-        "DIAGNOSING" -> "قيد التشخيص" to Color(0xFFFF9800) to androidx.compose.material.icons.Icons.Default.Search
-        "WAITING_PARTS" -> "بانتظار القطع" to Color(0xFF9C27B0) to androidx.compose.material.icons.Icons.Default.LocalShipping
-        "IN_REPAIR" -> "قيد الإصلاح" to Color(0xFF3F51B5) to androidx.compose.material.icons.Icons.Default.Build
-        "QUALITY_CHECK" -> "فحص الجودة" to Color(0xFF009688) to androidx.compose.material.icons.Icons.Default.Verified
-        "READY_FOR_PICKUP" -> "جاهز للاستلام" to Color(0xFF4CAF50) to androidx.compose.material.icons.Icons.Default.CheckCircle
-        "DELIVERED" -> "تم التسليم" to Color(0xFF8BC34A) to androidx.compose.material.icons.Icons.Default.DoneAll
-        "CANCELLED" -> "ملغي" to Color(0xFFF44336) to androidx.compose.material.icons.Icons.Default.Cancel
-        "ON_HOLD" -> "معلق" to Color(0xFF607D8B) to androidx.compose.material.icons.Icons.Default.PauseCircle
-        else -> status to Color(0xFF757575) to androidx.compose.material.icons.Icons.Default.Help
+        "RECEIVED" -> "تم الاستلام" to Color(0xFF2196F3) to Icons.Filled.Inventory
+        "DIAGNOSING" -> "قيد التشخيص" to Color(0xFFFF9800) to Icons.Filled.Search
+        "WAITING_PARTS" -> "بانتظار القطع" to Color(0xFF9C27B0) to Icons.Filled.LocalShipping
+        "IN_REPAIR" -> "قيد الإصلاح" to Color(0xFF3F51B5) to Icons.Filled.Build
+        "QUALITY_CHECK" -> "فحص الجودة" to Color(0xFF009688) to Icons.Filled.Verified
+        "READY_FOR_PICKUP" -> "جاهز للاستلام" to Color(0xFF4CAF50) to Icons.Filled.CheckCircle
+        "DELIVERED" -> "تم التسليم" to Color(0xFF8BC34A) to Icons.Filled.DoneAll
+        "CANCELLED" -> "ملغي" to Color(0xFFF44336) to Icons.Filled.Cancel
+        "ON_HOLD" -> "معلق" to Color(0xFF607D8B) to Icons.Filled.PauseCircle
+        else -> status to Color(0xFF757575) to Icons.Filled.Help
     }
     StatusChip(text = text, color = color, icon = icon, modifier = modifier)
 }

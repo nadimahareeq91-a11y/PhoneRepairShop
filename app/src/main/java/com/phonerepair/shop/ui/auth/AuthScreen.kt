@@ -24,6 +24,15 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.GTranslate
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Login
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -57,12 +66,12 @@ fun AuthScreen(
     viewModel: AuthViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
 ) {
     val isLogin by remember { mutableStateOf(true) }
-    val email by remember { mutableStateOf("") }
-    val password by remember { mutableStateOf("") }
-    val confirmPassword by remember { mutableStateOf("") }
-    val fullName by remember { mutableStateOf("") }
-    val phone by remember { mutableStateOf("") }
-    val isLoading by remember { mutableStateOf(false) }
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    var confirmPassword by remember { mutableStateOf("") }
+    var fullName by remember { mutableStateOf("") }
+    var phone by remember { mutableStateOf("") }
+    var isLoading by remember { mutableStateOf(false) }
     val errorMessage by remember { mutableStateOf<String?>(null) }
     val showPassword by remember { mutableStateOf(false) }
 
@@ -136,7 +145,7 @@ fun AuthScreen(
                                 value = fullName,
                                 onValueChange = { fullName = it },
                                 placeholder = "أحمد محمد",
-                                leadingIcon = androidx.compose.material.icons.Icons.Default.Person,
+                                leadingIcon = Icons.Filled.Person,
                                 keyboardType = KeyboardType.Text
                             )
                             CustomTextField(
@@ -144,7 +153,7 @@ fun AuthScreen(
                                 value = phone,
                                 onValueChange = { phone = it },
                                 placeholder = "05XXXXXXXX",
-                                leadingIcon = androidx.compose.material.icons.Icons.Default.Phone,
+                                leadingIcon = Icons.Filled.Phone,
                                 keyboardType = KeyboardType.Phone
                             )
                         }
@@ -154,7 +163,7 @@ fun AuthScreen(
                             value = email,
                             onValueChange = { email = it },
                             placeholder = "email@example.com",
-                            leadingIcon = androidx.compose.material.icons.Icons.Default.Email,
+                            leadingIcon = Icons.Filled.Email,
                             keyboardType = KeyboardType.Email
                         )
                         
@@ -163,11 +172,11 @@ fun AuthScreen(
                             value = password,
                             onValueChange = { password = it },
                             placeholder = "••••••••",
-                            leadingIcon = androidx.compose.material.icons.Icons.Default.Lock,
+                            leadingIcon = Icons.Filled.Lock,
                             trailingIcon = if (showPassword) 
-                                androidx.compose.material.icons.Icons.Default.Visibility 
+                                Icons.Filled.Visibility 
                             else 
-                                androidx.compose.material.icons.Icons.Default.VisibilityOff,
+                                Icons.Filled.VisibilityOff,
                             onTrailingIconClick = { showPassword = !showPassword },
                             visualTransformation = if (showPassword) 
                                 androidx.compose.ui.text.input.VisualTransformation.None 
@@ -182,11 +191,11 @@ fun AuthScreen(
                                 value = confirmPassword,
                                 onValueChange = { confirmPassword = it },
                                 placeholder = "••••••••",
-                                leadingIcon = androidx.compose.material.icons.Icons.Default.Lock,
+                                leadingIcon = Icons.Filled.Lock,
                                 trailingIcon = if (showPassword) 
-                                    androidx.compose.material.icons.Icons.Default.Visibility 
+                                    Icons.Filled.Visibility 
                                 else 
-                                    androidx.compose.material.icons.Icons.Default.VisibilityOff,
+                                    Icons.Filled.VisibilityOff,
                                 onTrailingIconClick = { showPassword = !showPassword },
                                 visualTransformation = if (showPassword) 
                                     androidx.compose.ui.text.input.VisualTransformation.None 
@@ -241,7 +250,7 @@ fun AuthScreen(
                             CustomOutlinedButton(
                                 text = "تسجيل الدخول بحساب موجود",
                                 onClick = { isLogin = true; errorMessage = null },
-                                icon = androidx.compose.material.icons.Icons.Default.Login
+                                icon = Icons.Filled.Login
                             )
                         }
                     }
@@ -264,7 +273,7 @@ fun AuthScreen(
                                     else errorMessage = error
                                 }
                             },
-                            icon = androidx.compose.material.icons.Icons.Default.GTranslate,
+                            icon = Icons.Filled.GTranslate,
                             modifier = Modifier.weight(1f)
                         )
                         CustomOutlinedButton(
@@ -272,7 +281,7 @@ fun AuthScreen(
                             onClick = {
                                 // Apple Sign In
                             },
-                            icon = androidx.compose.material.icons.Icons.Default.Phone,
+                            icon = Icons.Filled.Phone,
                             modifier = Modifier.weight(1f)
                         )
                     }

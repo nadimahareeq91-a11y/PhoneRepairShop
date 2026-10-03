@@ -17,6 +17,8 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -88,7 +90,7 @@ fun ReportsScreen(
                 Box {
                     androidx.compose.material3.IconButton(onClick = { periodMenuExpanded = true }) {
                         Icon(
-                            imageVector = androidx.compose.material.icons.Icons.Default.DateRange,
+                            imageVector = Icons.Filled.DateRange,
                             contentDescription = "اختر الفترة"
                         )
                     }

@@ -327,7 +327,7 @@ fun PartCard(
                 
                 StatusChip(
                     text = stockStatus.displayName,
-                    color = stockStatus.color,
+                    color = Color(stockStatus.color),
                     icon = stockStatus.icon
                 )
             }

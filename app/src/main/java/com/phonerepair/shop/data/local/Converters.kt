@@ -93,7 +93,7 @@ class Converters {
 
     @TypeConverter
     fun fromUsedPartList(value: String?): List<UsedPart> =
-        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.fromEncoded() } ?: emptyList()
+        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.decodeUsedPart() } ?: emptyList()
 
     @TypeConverter
     fun toUsedPartList(value: List<UsedPart>): String =
@@ -103,7 +103,7 @@ class Converters {
 
     @TypeConverter
     fun fromInvoiceItemList(value: String?): List<InvoiceItem> =
-        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.fromEncoded() } ?: emptyList()
+        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.decodeInvoiceItem() } ?: emptyList()
 
     @TypeConverter
     fun toInvoiceItemList(value: List<InvoiceItem>): String =
@@ -114,7 +114,7 @@ class Converters {
 
     @TypeConverter
     fun fromPaymentList(value: String?): List<Payment> =
-        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.fromEncoded() } ?: emptyList()
+        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.decodePayment() } ?: emptyList()
 
     @TypeConverter
     fun toPaymentList(value: List<Payment>): String =
@@ -137,7 +137,7 @@ class Converters {
     }
 }
 
-private fun UsedPart.fromEncoded(raw: String): UsedPart? {
+private fun String.decodeUsedPart(): UsedPart? {
     val f = raw.split(FIELD_SEPARATOR_TOKEN)
     if (f.size < 5) return null
     return UsedPart(
@@ -149,7 +149,7 @@ private fun UsedPart.fromEncoded(raw: String): UsedPart? {
     )
 }
 
-private fun InvoiceItem.fromEncoded(raw: String): InvoiceItem? {
+private fun String.decodeInvoiceItem(): InvoiceItem? {
     val f = raw.split(FIELD_SEPARATOR_TOKEN)
     if (f.size < 7) return null
     return InvoiceItem(
@@ -163,7 +163,7 @@ private fun InvoiceItem.fromEncoded(raw: String): InvoiceItem? {
     )
 }
 
-private fun Payment.fromEncoded(raw: String): Payment? {
+private fun String.decodePayment(): Payment? {
     val f = raw.split(FIELD_SEPARATOR_TOKEN)
     if (f.size < 6) return null
     return Payment(

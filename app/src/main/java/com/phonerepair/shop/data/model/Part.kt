@@ -67,7 +67,7 @@ data class Part(
         else -> StockStatus.NORMAL
     }
 
-    enum class StockStatus(val displayName: String, val color: Int) {
+    enum class StockStatus(val displayName: String, val color: Long) {
         NORMAL("طبيعي", 0xFF4CAF50),
         LOW("منخفض", 0xFFFF9800),
         OUT_OF_STOCK("نفد", 0xFFF44336),

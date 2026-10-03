@@ -281,7 +281,7 @@ fun InvoiceCard(
                 }
                 StatusChip(
                     text = paymentStatus.displayName,
-                    color = paymentStatus.color,
+                    color = Color(paymentStatus.color),
                     icon = paymentStatus.icon
                 )
             }

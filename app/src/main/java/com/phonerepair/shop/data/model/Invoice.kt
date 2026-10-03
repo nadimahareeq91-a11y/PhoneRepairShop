@@ -37,7 +37,7 @@ data class Invoice(
         OTHER("أخرى", "other")
     }
 
-    enum class PaymentStatus(val displayName: String, val color: Int) {
+    enum class PaymentStatus(val displayName: String, val color: Long) {
         PENDING("معلق", 0xFFFF9800),
         PARTIAL("مدفوع جزئياً", 0xFF2196F3),
         PAID("مدفوع بالكامل", 0xFF4CAF50),
@@ -66,7 +66,7 @@ data class InvoiceItem(
     val taxRate: Double = 0.15,
     val total: Double
 ) {
-    fun toMap(): Map<String, Any> = mapOf(
+    fun toMap(): Map<String, Any?> = mapOf(
         "partId" to partId,
         "partName" to partName,
         "quantity" to quantity,
@@ -84,7 +84,7 @@ data class Payment(
     val notes: String? = null,
     val paidAt: Date? = null
 ) {
-    fun toMap(): Map<String, Any> = mapOf(
+    fun toMap(): Map<String, Any?> = mapOf(
         "id" to id,
         "amount" to amount,
         "method" to method.name,

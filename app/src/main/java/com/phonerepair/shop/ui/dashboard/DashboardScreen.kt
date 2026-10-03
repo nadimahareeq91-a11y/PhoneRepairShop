@@ -55,10 +55,10 @@ fun DashboardScreen(
     onNavigateToSettings: () -> Unit,
     viewModel: DashboardViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
 ) {
-    val stats by remember { mutableStateOf(DashboardStats()) }
-    val recentOrders by remember { mutableStateOf<List<RepairOrderSummary>>(emptyList()) }
-    val lowStockParts by remember { mutableStateOf<List<PartSummary>>(emptyList()) }
-    val isLoading by remember { mutableStateOf(true) }
+    var stats by remember { mutableStateOf(DashboardStats()) }
+    var recentOrders by remember { mutableStateOf<List<RepairOrderSummary>>(emptyList()) }
+    var lowStockParts by remember { mutableStateOf<List<PartSummary>>(emptyList()) }
+    var isLoading by remember { mutableStateOf(true) }
 
     // Load data
     androidx.compose.runtime.LaunchedEffect(Unit) {
