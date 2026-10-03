@@ -123,7 +123,7 @@
     <string name="is_serialized">مسلسل</string>
     <string name="adjust_stock">تعديل المخزون</string>
     <string name="stock_in">إضافة مخزون</string>
-    <string name="stock_out">سحب مخزون</string>
+    <string name="stock_deduct">سحب مخزون</string>
     <string name="profit_margin">هامش الربح</string>
     <string name="total_value">إجمالي القيمة</string>
     
@@ -285,7 +285,6 @@
     <string name="edit">تعديل</string>
     <string name="add">إضافة</string>
     <string name="search">بحث</string>
-    <string name="filter">تصفية</string>
     <string name="sort">ترتيب</string>
     <string name="refresh">تحديث</string>
     <string name="loading">جاري التحميل...</string>
