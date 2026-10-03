@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="sharedpref" path="." />
+    <include domain="database" path="." />
+    <include domain="files" path="." />
+    <exclude domain="database" path="phone_repair_db" />
+    <exclude domain="sharedpref" path="datastore_preferences.preferences_pb" />
+</full-backup-content>

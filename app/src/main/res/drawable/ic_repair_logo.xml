@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Background circle -->
+    <path
+        android:fillColor="@color/primary"
+        android:pathData="M50,100 C22.39,100 0,77.61 0,50 C0,22.39 22.39,0 50,0 C77.61,0 100,22.39 100,50 C100,77.61 77.61,100 50,100 Z"/>
+    
+    <!-- Phone outline -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M30,20 L70,20 C75.52,20 80,24.48 80,30 L80,80 C80,85.52 75.52,90 70,90 L30,90 C24.48,90 20,85.52 20,80 L20,30 C20,24.48 24.48,20 30,20 Z"/>
+    
+    <!-- Inner phone screen -->
+    <path
+        android:fillColor="@color/primary"
+        android:pathData="M35,28 L65,28 C67.76,28 70,30.24 70,33 L70,82 C70,84.76 67.76,87 65,87 L35,87 C32.24,87 30,84.76 30,82 L30,33 C30,30.24 32.24,28 35,28 Z"/>
+    
+    <!-- Repair tools icon -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M42,45 L48,45 L48,55 L42,55 Z M52,45 L58,45 L58,55 L52,55 Z"/>
+    
+    <!-- Screwdriver -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M50,60 L50,75 L55,75 L55,60 Z M45,65 L55,65 L55,68 L45,68 Z"/>
+    
+    <!-- Small circle at top (camera) -->
+    <circle
+        android:cx="50"
+        android:cy="35"
+        android:r="3"
+        android:fillColor="@android:color/white"/>
+    
+    <!-- Home button at bottom -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M45,83 L55,83 L55,85 L45,85 Z"/>
+</vector>

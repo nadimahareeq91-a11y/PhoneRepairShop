@@ -1,0 +1,66 @@
+# Android
+*.apk
+*.ap_
+*.aab
+*.aapt
+*.dex
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar
+*.gz
+*.rar
+
+# Gradle
+.gradle/
+build/
+*/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration
+local.properties
+gradle.properties
+*.keystore
+*.jks
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node modules
+node_modules/
+
+# Cache
+.cache/
+*.log
+
+# Project specific
+nadi/
+project-nadi/
+gcloud/
+storage/
+sa-key.json
+.bash_history
+.bashrc
+.profile
+.cache/
+.config/
+.local/
+.npm/
+
+# Firebase
+google-services.json
+
+# Release
+*.release.*

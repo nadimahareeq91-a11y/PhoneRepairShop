@@ -1,0 +1,339 @@
+<resources>
+    <string name="app_name">محل صيانة الهواتف</string>
+    <string name="app_name_short">صيانة</string>
+    
+    <!-- Auth -->
+    <string name="welcome_back">مرحباً بعودتك</string>
+    <string name="create_account">إنشاء حساب جديد</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="register">إنشاء الحساب</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="forgot_password">نسيت كلمة المرور؟</string>
+    <string name="dont_have_account">ليس لديك حساب؟</string>
+    <string name="already_have_account">لديك حساب بالفعل؟</string>
+    <string name="sign_up">إنشاء حساب</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="continue_with_google">المتابعة مع Google</string>
+    <string name="continue_with_apple">المتابعة مع Apple</string>
+    <string name="or_continue_with">أو المتابعة مع</string>
+    
+    <!-- Navigation -->
+    <string name="dashboard">الرئيسية</string>
+    <string name="repairs">الصيانة</string>
+    <string name="inventory">المخزون</string>
+    <string name="customers">العملاء</string>
+    <string name="invoices">الفواتير</string>
+    <string name="reports">التقارير</string>
+    <string name="settings">الإعدادات</string>
+    
+    <!-- Dashboard -->
+    <string name="dashboard_title">لوحة التحكم</string>
+    <string name="dashboard_subtitle">مرحباً بك في محل صيانة الهواتف</string>
+    <string name="quick_stats">نظرة سريعة</string>
+    <string name="quick_actions">إجراءات سريعة</string>
+    <string name="recent_orders">أحدث طلبات الصيانة</string>
+    <string name="low_stock_alert">تنبيه: مخزون منخفض</string>
+    <string name="today_orders">طلبات اليوم</string>
+    <string name="in_progress">قيد الإصلاح</string>
+    <string name="ready_for_pickup">جاهز للاستلام</string>
+    <string name="completed_today">مكتمل اليوم</string>
+    <string name="total_revenue">إيرادات اليوم</string>
+    <string name="pending_payments">مدفوعات معلقة</string>
+    <string name="low_stock_count">قطع منخفضة</string>
+    <string name="total_customers">إجمالي العملاء</string>
+    
+    <!-- Repairs -->
+    <string name="repairs_title">طلبات الصيانة</string>
+    <string name="new_repair_order">طلب صيانة جديد</string>
+    <string name="search_repairs">ابحث بالاسم، الجهاز، الرقم...</string>
+    <string name="filter">تصفية</string>
+    <string name="status">الحالة</string>
+    <string name="priority">الأولوية</string>
+    <string name="all_statuses">الكل</string>
+    <string name="all_priorities">الكل</string>
+    <string name="update_status">تحديث الحالة</string>
+    <string name="view_details">عرض التفاصيل</string>
+    <string name="customer_name">اسم العميل</string>
+    <string name="customer_phone">هاتف العميل</string>
+    <string name="device_brand">ماركة الجهاز</string>
+    <string name="device_model">موديل الجهاز</string>
+    <string name="device_serial">الرقم التسلسلي</string>
+    <string name="device_color">لون الجهاز</string>
+    <string name="device_condition">حالة الجهاز</string>
+    <string name="reported_issue">العطل المبلغ عنه</string>
+    <string name="diagnosed_issue">العطل المشخص</string>
+    <string name="technician">الفني</string>
+    <string name="estimated_cost">التكلفة المتوقعة</string>
+    <string name="final_cost">التكلفة النهائية</string>
+    <string name="paid_amount">المدفوع</string>
+    <string name="remaining_amount">المتبقي</string>
+    <string name="warranty_days">أيام الضمان</string>
+    <string name="notes">ملاحظات</string>
+    <string name="images">صور</string>
+    <string name="add_image">إضافة صورة</string>
+    <string name="add_part">إضافة قطعة</string>
+    <string name="add_note">إضافة ملاحظة</string>
+    <string name="print_receipt">طباعة إيصال</string>
+    <string name="send_notification">إرسال إشعار</string>
+    
+    <!-- Repair Statuses -->
+    <string name="status_received">تم الاستلام</string>
+    <string name="status_diagnosing">قيد التشخيص</string>
+    <string name="status_waiting_parts">بانتظار القطع</string>
+    <string name="status_in_repair">قيد الإصلاح</string>
+    <string name="status_quality_check">فحص الجودة</string>
+    <string name="status_ready_for_pickup">جاهز للاستلام</string>
+    <string name="status_delivered">تم التسليم</string>
+    <string name="status_cancelled">ملغي</string>
+    <string name="status_on_hold">معلق</string>
+    
+    <!-- Priorities -->
+    <string name="priority_urgent">عاجل</string>
+    <string name="priority_high">عالية</string>
+    <string name="priority_normal">عادية</string>
+    <string name="priority_low">منخفضة</string>
+    
+    <!-- Inventory -->
+    <string name="inventory_title">إدارة المخزون</string>
+    <string name="new_part">قطعة جديدة</string>
+    <string name="search_parts">ابحث بالاسم، SKU، الباركود...</string>
+    <string name="category">الفئة</string>
+    <string name="all_categories">الكل</string>
+    <string name="low_stock_only">منخفضة المخزون فقط</string>
+    <string name="part_name">اسم القطعة</string>
+    <string name="part_name_ar">اسم القطعة بالعربي</string>
+    <string name="sku">SKU</string>
+    <string name="barcode">الباركود</string>
+    <string name="scan_barcode">مسح الباركود</string>
+    <string name="purchase_price">سعر الشراء</string>
+    <string name="sale_price">سعر البيع</string>
+    <string name="wholesale_price">سعر الجملة</string>
+    <string name="current_stock">المخزون الحالي</string>
+    <string name="min_stock_level">الحد الأدنى</string>
+    <string name="max_stock_level">الحد الأقصى</string>
+    <string name="unit">الوحدة</string>
+    <string name="supplier">المورد</string>
+    <string name="location">الموقع</string>
+    <string name="description">الوصف</string>
+    <string name="compatible_devices">الأجهزة المتوافقة</string>
+    <string name="is_serialized">مسلسل</string>
+    <string name="adjust_stock">تعديل المخزون</string>
+    <string name="stock_in">إضافة مخزون</string>
+    <string name="stock_out">سحب مخزون</string>
+    <string name="profit_margin">هامش الربح</string>
+    <string name="total_value">إجمالي القيمة</string>
+    
+    <!-- Part Categories -->
+    <string name="category_screen">الشاشات</string>
+    <string name="category_battery">البطاريات</string>
+    <string name="category_camera">الكاميرات</string>
+    <string name="category_charging_port">منافذ الشحن</string>
+    <string name="category_motherboard">اللوحة الأم</string>
+    <string name="category_buttons">الأزرار</string>
+    <string name="category_speaker">السماعات</string>
+    <string name="category_microphone">الميكروفون</string>
+    <string name="category_vibrator">محرك الاهتزاز</string>
+    <string name="category_flex_cable">كابلات فليكس</string>
+    <string name="category_adhesive">مواد لاصقة</string>
+    <string name="category_tool">أدوات</string>
+    <string name="category_case">أغطية</string>
+    <string name="category_accessory">إكسسوارات</string>
+    <string name="category_other">أخرى</string>
+    
+    <!-- Units -->
+    <string name="unit_piece">قطعة</string>
+    <string name="unit_pack">علبة</string>
+    <string name="unit_set">مجموعة</string>
+    <string name="unit_meter">متر</string>
+    <string name="unit_kg">كيلو</string>
+    
+    <!-- Stock Status -->
+    <string name="stock_normal">طبيعي</string>
+    <string name="stock_low">منخفض</string>
+    <string name="stock_out">نفد</string>
+    <string name="stock_over">زائد</string>
+    
+    <!-- Customers -->
+    <string name="customers_title">العملاء</string>
+    <string name="new_customer">عميل جديد</string>
+    <string name="search_customers">ابحث بالاسم، الهاتف، الإيميل...</string>
+    <string name="customer_details">تفاصيل العميل</string>
+    <string name="customer_history">سجل الصيانة</string>
+    <string name="loyalty_points">نقاط الولاء</string>
+    <string name="total_orders">إجمالي الطلبات</string>
+    <string name="total_spent">إجمالي الإنفاق</string>
+    <string name="last_visit">آخر زيارة</string>
+    <string name="preferred_contact">طريقة التواصل المفضلة</string>
+    <string name="blacklist_customer">إضافة للقائمة السوداء</string>
+    <string name="remove_blacklist">إزالة من القائمة السوداء</string>
+    <string name="blacklist_reason">سبب الحظر</string>
+    
+    <!-- Contact Methods -->
+    <string name="contact_phone">هاتف</string>
+    <string name="contact_sms">رسائل نصية</string>
+    <string name="contact_whatsapp">واتساب</string>
+    <string name="contact_email">بريد إلكتروني</string>
+    
+    <!-- Invoices -->
+    <string name="invoices_title">الفواتير</string>
+    <string name="new_invoice">فاتورة جديدة</string>
+    <string name="search_invoices">ابحث برقم الفاتورة، العميل...</string>
+    <string name="payment_status">حالة الدفع</string>
+    <string name="payment_method">طريقة الدفع</string>
+    <string name="invoice_number">رقم الفاتورة</string>
+    <string name="invoice_date">تاريخ الفاتورة</string>
+    <string name="due_date">تاريخ الاستحقاق</string>
+    <string name="subtotal">المجموع الفرعي</string>
+    <string name="tax">الضريبة</string>
+    <string name="discount">الخصم</string>
+    <string name="total_amount">الإجمالي</string>
+    <string name="add_payment">إضافة دفعة</string>
+    <string name="print_invoice">طباعة الفاتورة</string>
+    <string name="send_invoice">إرسال الفاتورة</string>
+    <string name="mark_paid">تحديد كمدفوع</string>
+    
+    <!-- Payment Statuses -->
+    <string name="payment_pending">معلق</string>
+    <string name="payment_partial">مدفوع جزئياً</string>
+    <string name="payment_paid">مدفوع بالكامل</string>
+    <string name="payment_overdue">متأخر</string>
+    <string name="payment_refunded">مسترد</string>
+    <string name="payment_cancelled">ملغي</string>
+    
+    <!-- Payment Methods -->
+    <string name="method_cash">نقدي</string>
+    <string name="method_card">بطاقة</string>
+    <string name="method_bank_transfer">تحويل بنكي</string>
+    <string name="method_wallet">محفظة إلكترونية</string>
+    <string name="method_installments">أقساط</string>
+    <string name="method_other">أخرى</string>
+    
+    <!-- Reports -->
+    <string name="reports_title">التقارير والإحصائيات</string>
+    <string name="select_period">اختر الفترة</string>
+    <string name="today">اليوم</string>
+    <string name="this_week">هذا الأسبوع</string>
+    <string name="this_month">هذا الشهر</string>
+    <string name="last_month">الشهر الماضي</string>
+    <string name="this_year">هذا العام</string>
+    <string name="custom_period">مخصص</string>
+    <string name="kpi_title">مؤشرات الأداء الرئيسية</string>
+    <string name="charts_title">الرسوم البيانية</string>
+    <string name="daily_revenue">الإيرادات اليومية</string>
+    <string name="status_distribution">توزيع الحالات</string>
+    <string name="top_selling_parts">أعلى القطع مبيعاً</string>
+    <string name="technician_performance">أداء الفنيين</string>
+    <string name="inventory_stats">إحصائيات المخزون</string>
+    <string name="customer_stats">إحصائيات العملاء</string>
+    <string name="revenue_change">تغير الإيرادات</string>
+    <string name="orders_change">تغير الطلبات</string>
+    <string name="avg_order_value">متوسط قيمة الطلب</string>
+    <string name="completion_rate">معدل الإكمال</string>
+    <string name="new_customers">عملاء جدد</string>
+    <string name="loyalty_points_awarded">نقاط الولاء الممنوحة</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">الإعدادات</string>
+    <string name="account_appearance">الحساب والمظهر</string>
+    <string name="shop_settings">إعدادات المحل</string>
+    <string name="printing_settings">الطباعة</string>
+    <string name="data_sync">البيانات والمزامنة</string>
+    <string name="inventory_settings">إعدادات المخزون</string>
+    <string name="about_app">حول التطبيق</string>
+    <string name="danger_zone">منطقة الخطر</string>
+    
+    <string name="profile">الملف الشخصي</string>
+    <string name="theme">السمة</string>
+    <string name="language">اللغة</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="shop_info">بيانات المحل</string>
+    <string name="tax_currency">الضريبة والعملات</string>
+    <string name="working_hours">ساعات العمل</string>
+    <string name="warranty_settings">الضمان الافتراضي</string>
+    <string name="printer_settings">طابعة الفواتير</string>
+    <string name="receipt_customization">تخصيص الفاتورة</string>
+    <string name="auto_backup">النسخ الاحتياطي التلقائي</string>
+    <string name="restore_backup">استعادة نسخة احتياطية</string>
+    <string name="sync_now">مزامنة الآن</string>
+    <string name="clear_local_data">مسح البيانات المحلية</string>
+    <string name="low_stock_threshold">تنبيه المخزون المنخفض</string>
+    <string name="app_version">إصدار التطبيق</string>
+    <string name="help_support">المساعدة والدعم</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="terms_of_service">شروط الاستخدام</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="delete_account">حذف الحساب</string>
+    <string name="save_changes">حفظ التغييرات</string>
+    
+    <!-- Themes -->
+    <string name="theme_light">فاتح</string>
+    <string name="theme_dark">داكن</string>
+    <string name="theme_system">النظام</string>
+    
+    <!-- Languages -->
+    <string name="lang_arabic">العربية</string>
+    <string name="lang_english">English</string>
+    
+    <!-- Common -->
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="delete">حذف</string>
+    <string name="edit">تعديل</string>
+    <string name="add">إضافة</string>
+    <string name="search">بحث</string>
+    <string name="filter">تصفية</string>
+    <string name="sort">ترتيب</string>
+    <string name="refresh">تحديث</string>
+    <string name="loading">جاري التحميل...</string>
+    <string name="no_data">لا توجد بيانات</string>
+    <string name="no_results">لا توجد نتائج</string>
+    <string name="error_occurred">حدث خطأ</string>
+    <string name="try_again">حاول مرة أخرى</string>
+    <string name="confirm">تأكيد</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="ok">موافق</string>
+    <string name="close">إغلاق</string>
+    <string name="done">تم</string>
+    <string name="next">التالي</string>
+    <string name="previous">السابق</string>
+    <string name="select">اختيار</string>
+    <string name="select_all">تحديد الكل</string>
+    <string name="clear">مسح</string>
+    <string name="copy">نسخ</string>
+    <string name="share">مشاركة</string>
+    <string name="print">طباعة</string>
+    <string name="export">تصدير</string>
+    <string name="import">استيراد</string>
+    
+    <!-- Validation -->
+    <string name="field_required">هذا الحقل مطلوب</string>
+    <string name="invalid_email">بريد إلكتروني غير صحيح</string>
+    <string name="invalid_phone">رقم هاتف غير صحيح</string>
+    <string name="password_too_short">كلمة المرور قصيرة جداً</string>
+    <string name="passwords_dont_match">كلمات المرور غير متطابقة</string>
+    <string name="min_length_error">الحد الأدنى %1$d أحرف</string>
+    <string name="max_length_error">الحد الأقصى %1$d أحرف</string>
+    
+    <!-- Success/Error Messages -->
+    <string name="saved_successfully">تم الحفظ بنجاح</string>
+    <string name="deleted_successfully">تم الحذف بنجاح</string>
+    <string name="created_successfully">تم الإنشاء بنجاح</string>
+    <string name="updated_successfully">تم التحديث بنجاح</string>
+    <string name="sync_completed">اكتملت المزامنة</string>
+    <string name="backup_completed">اكتمل النسخ الاحتياطي</string>
+    <string name="restore_completed">اكتملت الاستعادة</string>
+    <string name="printed_successfully">تمت الطباعة بنجاح</string>
+    <string name="notification_sent">تم إرسال الإشعار</string>
+    
+    <!-- Dialogs -->
+    <string name="confirm_delete">هل أنت متأكد من الحذف؟</string>
+    <string name="confirm_logout">هل تريد تسجيل الخروج؟</string>
+    <string name="confirm_delete_account">هل تريد حذف الحساب نهائياً؟ لا يمكن التراجع عن هذا الإجراء.</string>
+    <string name="confirm_clear_data">سيتم حذف جميع البيانات المحلية. هل تريد المتابعة؟</string>
+    <string name="unsaved_changes">لديك تغييرات غير محفوظة. هل تريد المغادرة؟</string>
+</resources>

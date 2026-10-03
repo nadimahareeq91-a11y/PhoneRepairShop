@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - Modern Teal/Green Theme -->
+    <color name="primary">#009688</color>
+    <color name="primary_variant">#00695C</color>
+    <color name="primary_light">#B2DFDB</color>
+    <color name="primary_dark">#004D40</color>
+    <color name="on_primary">#FFFFFF</color>
+    
+    <!-- Secondary Colors -->
+    <color name="secondary">#00695C</color>
+    <color name="secondary_variant">#004D40</color>
+    <color name="secondary_light">#80CBC4</color>
+    <color name="on_secondary">#FFFFFF</color>
+    
+    <!-- Tertiary Colors -->
+    <color name="tertiary">#2E7D32</color>
+    <color name="tertiary_variant">#1B5E20</color>
+    <color name="tertiary_light">#A5D6A7</color>
+    <color name="on_tertiary">#FFFFFF</color>
+    
+    <!-- Error Colors -->
+    <color name="error">#C62828</color>
+    <color name="error_light">#EF9A9A</color>
+    <color name="on_error">#FFFFFF</color>
+    
+    <!-- Surface Colors -->
+    <color name="surface">#FAFAFA</color>
+    <color name="surface_variant">#F5F5F5</color>
+    <color name="surface_container">#EEEEEE</color>
+    <color name="surface_container_high">#E0E0E0</color>
+    <color name="surface_container_highest">#D6D6D6</color>
+    <color name="on_surface">#1A1A2E</color>
+    <color name="on_surface_variant">#49454F</color>
+    
+    <!-- Background Colors -->
+    <color name="background">#FFFFFF</color>
+    <color name="on_background">#1A1A2E</color>
+    
+    <!-- Outline Colors -->
+    <color name="outline">#757575</color>
+    <color name="outline_variant">#BDBDBD</color>
+    
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="info">#2196F3</color>
+    
+    <!-- Repair Status Colors -->
+    <color name="status_received">#2196F3</color>
+    <color name="status_diagnosing">#FF9800</color>
+    <color name="status_waiting_parts">#9C27B0</color>
+    <color name="status_in_repair">#3F51B5</color>
+    <color name="status_quality_check">#009688</color>
+    <color name="status_ready_for_pickup">#4CAF50</color>
+    <color name="status_delivered">#8BC34A</color>
+    <color name="status_cancelled">#F44336</color>
+    <color name="status_on_hold">#607D8B</color>
+    
+    <!-- Priority Colors -->
+    <color name="priority_urgent">#F44336</color>
+    <color name="priority_high">#FF9800</color>
+    <color name="priority_normal">#2196F3</color>
+    <color name="priority_low">#4CAF50</color>
+    
+    <!-- Payment Status Colors -->
+    <color name="payment_pending">#FF9800</color>
+    <color name="payment_partial">#2196F3</color>
+    <color name="payment_paid">#4CAF50</color>
+    <color name="payment_overdue">#F44336</color>
+    <color name="payment_refunded">#9C27B0</color>
+    <color name="payment_cancelled">#607D8B</color>
+    
+    <!-- Stock Status Colors -->
+    <color name="stock_normal">#4CAF50</color>
+    <color name="stock_low">#FF9800</color>
+    <color name="stock_out">#F44336</color>
+    <color name="stock_over">#2196F3</color>
+    
+    <!-- Dark Theme Colors -->
+    <color name="dark_primary">#4DB6AC</color>
+    <color name="dark_primary_variant">#00695C</color>
+    <color name="dark_secondary">#80CBC4</color>
+    <color name="dark_secondary_variant">#004D40</color>
+    <color name="dark_surface">#1A1A2E</color>
+    <color name="dark_surface_variant">#27273E</color>
+    <color name="dark_background">#121212</color>
+    <color name="dark_on_surface">#E0E0E0</color>
+    <color name="dark_on_background">#E0E0E0</color>
+    <color name="dark_outline">#9E9E9E</color>
+    <color name="dark_outline_variant">#616161</color>
+    
+    <!-- Notification -->
+    <color name="notification_icon_bg">#009688</color>
+    
+    <!-- Scrim -->
+    <color name="scrim">#000000</color>
+    
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+    
+    <!-- Divider -->
+    <color name="divider">#E0E0E0</color>
+    <color name="divider_dark">#333333</color>
+</resources>
