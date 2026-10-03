@@ -1,9 +1,9 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
-    // id("com.google.gms.google-services") // Firebase - فعل عند الحاجة
+    id("com.android.application") version "8.3.0"
+    id("org.jetbrains.kotlin.android") version "1.9.20"
+    id("kotlin-kapt") version "1.9.20"
+    id("dagger.hilt.android.plugin") version "2.48"
+    // id("com.google.gms.google-services") version "4.4.1" // Firebase - فعل عند الحاجة
 }
 
 android {
