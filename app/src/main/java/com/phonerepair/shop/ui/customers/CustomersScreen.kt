@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -39,7 +41,6 @@ import com.phonerepair.shop.ui.theme.PhoneRepairTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import androidx.compose.material.icons.Icons
 
 @Composable
 fun CustomersScreen(
@@ -145,7 +146,7 @@ fun CustomerStatsRow(customers: List<CustomerItem>) {
 }
 
 @Composable
-fun StatBox(title: String, value: String, icon: ImageVector, color: Color) {
+fun RowScope.StatBox(title: String, value: String, icon: ImageVector, color: Color) {
     Card(
         modifier = Modifier
             .weight(1f)

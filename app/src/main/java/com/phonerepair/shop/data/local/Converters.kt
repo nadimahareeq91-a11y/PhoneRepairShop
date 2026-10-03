@@ -137,7 +137,7 @@ class Converters {
     }
 }
 
-private fun String.decodeUsedPart(): UsedPart? {
+private fun String.decodeUsedPart(raw: String): UsedPart? {
     val f = raw.split(FIELD_SEPARATOR_TOKEN)
     if (f.size < 5) return null
     return UsedPart(
@@ -149,7 +149,7 @@ private fun String.decodeUsedPart(): UsedPart? {
     )
 }
 
-private fun String.decodeInvoiceItem(): InvoiceItem? {
+private fun String.decodeInvoiceItem(raw: String): InvoiceItem? {
     val f = raw.split(FIELD_SEPARATOR_TOKEN)
     if (f.size < 7) return null
     return InvoiceItem(
@@ -163,7 +163,7 @@ private fun String.decodeInvoiceItem(): InvoiceItem? {
     )
 }
 
-private fun String.decodePayment(): Payment? {
+private fun String.decodePayment(raw: String): Payment? {
     val f = raw.split(FIELD_SEPARATOR_TOKEN)
     if (f.size < 6) return null
     return Payment(

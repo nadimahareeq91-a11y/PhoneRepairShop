@@ -3,6 +3,7 @@ package com.phonerepair.shop.data.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
+
 @Entity(tableName = "repair_orders")
 data class RepairOrder(
     @PrimaryKey

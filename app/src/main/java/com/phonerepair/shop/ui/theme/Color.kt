@@ -1,5 +1,6 @@
 package com.phonerepair.shop.ui.theme
 
+import androidx.compose.foundation.background
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color

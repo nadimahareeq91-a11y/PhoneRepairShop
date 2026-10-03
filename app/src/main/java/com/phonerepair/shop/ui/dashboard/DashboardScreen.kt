@@ -10,12 +10,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyHorizontalGrid
-import androidx.compose.foundation.lazy.LazyVerticalGrid
-import androidx.compose.foundation.lazy.gridItems
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -43,7 +44,6 @@ import com.phonerepair.shop.ui.theme.PhoneRepairTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import androidx.compose.material.icons.Icons
 
 @Composable
 fun DashboardScreen(
@@ -59,11 +59,6 @@ fun DashboardScreen(
     var recentOrders by remember { mutableStateOf<List<RepairOrderSummary>>(emptyList()) }
     var lowStockParts by remember { mutableStateOf<List<PartSummary>>(emptyList()) }
     var isLoading by remember { mutableStateOf(true) }
-
-    // Load data
-    androidx.compose.runtime.LaunchedEffect(Unit) {
-        loadData()
-    }
 
     fun loadData() {
         // Simulate loading
@@ -99,6 +94,12 @@ fun DashboardScreen(
         }
         isLoading = false
     }
+
+    // Load data
+    androidx.compose.runtime.LaunchedEffect(Unit) {
+        loadData()
+    }
+
 
     LoadingOverlay(isLoading = isLoading, message = "جاري تحميل لوحة التحكم...") {
         Box(modifier = Modifier.fillMaxSize()) {
@@ -144,7 +145,7 @@ fun DashboardScreen(
                     modifier = Modifier.fillMaxWidth(),
                     contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
                 ) {
-                    items(quickStats) { stat ->
+                    items(quickStats()) { stat ->
                         StatCard(stat = stat)
                     }
                 }
@@ -159,7 +160,7 @@ fun DashboardScreen(
                     modifier = Modifier.fillMaxWidth().height(200.dp),
                     contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
                 ) {
-                    items(quickActions) { action ->
+                    items(quickActions(onNavigateToRepairs, onNavigateToInventory, onNavigateToCustomers, onNavigateToInvoices)) { action ->
                         ActionCard(action = action)
                     }
                 }
@@ -462,7 +463,8 @@ data class QuickAction(
     val onClick: () -> Unit
 )
 
-val quickStats = listOf(
+@Composable
+fun quickStats(): List<StatItem> = listOf(
     StatItem("طلبات اليوم", "12", Icons.Default.Assignment, MaterialTheme.colorScheme.primary),
     StatItem("قيد الإصلاح", "5", Icons.Default.Build, Color(0xFF3F51B5)),
     StatItem("جاهز للاستلام", "3", Icons.Default.CheckCircle, Color(0xFF4CAF50)),
@@ -473,11 +475,12 @@ val quickStats = listOf(
     StatItem("مكتمل اليوم", "7", Icons.Default.TaskAlt, Color(0xFF009688))
 )
 
-val quickActions = listOf(
-    QuickAction("طلب صيانة جديد", Icons.Default.AddCircle, onNavigateToRepairs),
-    QuickAction("إضافة قطعة", Icons.Default.AddBox, onNavigateToInventory),
-    QuickAction("عميل جديد", Icons.Default.PersonAdd, onNavigateToCustomers),
-    QuickAction("فاتورة جديدة", Icons.Default.ReceiptLong, onNavigateToInvoices),
+@Composable
+fun quickActions(onRepairs: () -> Unit, onInventory: () -> Unit, onCustomers: () -> Unit, onInvoices: () -> Unit): List<QuickAction> = listOf(
+    QuickAction("طلب صيانة جديد", Icons.Default.AddCircle, onRepairs),
+    QuickAction("إضافة قطعة", Icons.Default.AddBox, onInventory),
+    QuickAction("عميل جديد", Icons.Default.PersonAdd, onCustomers),
+    QuickAction("فاتورة جديدة", Icons.Default.ReceiptLong, onInvoices),
     QuickAction("مسح باركود", Icons.Default.QrCodeScanner, { /* barcode scanner */ }),
     QuickAction("طباعة فاتورة", Icons.Default.Print, { /* print */ })
 )

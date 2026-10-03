@@ -11,6 +11,15 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.GTranslate
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Login
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -24,15 +33,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextFieldDefaults
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.GTranslate
-import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.Login
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Phone
-import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -179,7 +179,6 @@ fun AuthScreen(
                                 Icons.Filled.VisibilityOff,
                             onTrailingIconClick = { showPassword = !showPassword },
                             visualTransformation = if (showPassword) 
-                                androidx.compose.ui.text.input.VisualTransformation.None 
                             else 
                                 PasswordVisualTransformation(),
                             isError = isLogin && errorMessage != null
@@ -198,7 +197,6 @@ fun AuthScreen(
                                     Icons.Filled.VisibilityOff,
                                 onTrailingIconClick = { showPassword = !showPassword },
                                 visualTransformation = if (showPassword) 
-                                    androidx.compose.ui.text.input.VisualTransformation.None 
                                 else 
                                     PasswordVisualTransformation()
                             )
@@ -333,19 +331,25 @@ private fun validateRegister(
 class AuthViewModel : androidx.lifecycle.ViewModel() {
     fun login(email: String, password: String, callback: (Boolean, String?) -> Unit) {
         // TODO: Implement Firebase Auth
-        kotlinx.coroutines.delay(1000)
-        callback(true, null)
+        androidx.lifecycle.viewModelScope.launch {
+            kotlinx.coroutines.delay(1000)
+            callback(true, null)
+        }
     }
     
     fun register(fullName: String, phone: String, email: String, password: String, callback: (Boolean, String?) -> Unit) {
         // TODO: Implement Firebase Auth
-        kotlinx.coroutines.delay(1000)
-        callback(true, null)
+        androidx.lifecycle.viewModelScope.launch {
+            kotlinx.coroutines.delay(1000)
+            callback(true, null)
+        }
     }
     
     fun signInWithGoogle(callback: (Boolean, String?) -> Unit) {
         // TODO: Implement Google Sign In
-        kotlinx.coroutines.delay(1000)
-        callback(true, null)
+        androidx.lifecycle.viewModelScope.launch {
+            kotlinx.coroutines.delay(1000)
+            callback(true, null)
+        }
     }
 }

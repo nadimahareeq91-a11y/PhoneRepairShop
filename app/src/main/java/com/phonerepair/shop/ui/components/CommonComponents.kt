@@ -1,5 +1,6 @@
 package com.phonerepair.shop.ui.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,23 +11,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Checkbox
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilledTextField
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.TextFieldColors
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
@@ -42,6 +28,20 @@ import androidx.compose.material.icons.filled.PriorityHigh
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Verified
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -77,7 +77,7 @@ fun CustomButton(
     enabled: Boolean = true,
     icon: ImageVector? = null,
     isLoading: Boolean = false,
-    colors: ButtonDefaults.ButtonColors? = null,
+    colors: androidx.compose.material3.ButtonColors? = null,
     shape: RoundedCornerShape = RoundedCornerShape(12.dp)
 ) {
     Button(
@@ -198,6 +198,7 @@ fun CustomIconButton(
     }
 }
 
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
 fun CustomTextField(
     label: String,
@@ -214,7 +215,7 @@ fun CustomTextField(
     visualTransformation: VisualTransformation = androidx.compose.ui.text.input.VisualTransformation.None,
     singleLine: Boolean = true,
     maxLines: Int = 1,
-    textStyle: TextStyle = androidx.compose.material3.Typography.bodyLarge,
+    textStyle: TextStyle? = null,
     enabled: Boolean = true,
     colors: TextFieldColors? = null
 ) {
@@ -222,16 +223,15 @@ fun CustomTextField(
     
     val textFieldColors = colors ?: (if (isError) {
         androidx.compose.material3.TextFieldDefaults.textFieldColors(
-            containerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
-            unfocusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
             focusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
-            errorColor = androidx.compose.material3.MaterialTheme.colorScheme.error
+            unfocusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
+            errorContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.errorContainer,
+            errorContentColor = androidx.compose.material3.MaterialTheme.colorScheme.onErrorContainer
         )
     } else {
         androidx.compose.material3.TextFieldDefaults.textFieldColors(
-            containerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
-            unfocusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
-            focusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest
+            focusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
+            unfocusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest
         )
     })
 
@@ -256,11 +256,11 @@ fun CustomTextField(
             }
         },
         isError = isError,
-        keyboardOptions = androidx.compose.ui.text.input.KeyboardOptions(keyboardType = keyboardType),
+        keyboardOptions = KeyboardOptions(keyboardType = keyboardType),
         visualTransformation = visualTransformation,
         singleLine = singleLine,
         maxLines = maxLines,
-        textStyle = textStyle,
+        textStyle = textStyle ?: androidx.compose.material3.MaterialTheme.typography.bodyLarge,
         enabled = enabled,
         colors = textFieldColors
     )
@@ -269,7 +269,7 @@ fun CustomTextField(
 @Composable
 fun CustomCard(
     modifier: Modifier = Modifier,
-    elevation: androidx.compose.material3.CardDefaults.CardElevation = CardDefaults.cardElevation(
+    elevation: androidx.compose.material3.CardElevation = CardDefaults.cardElevation(
         defaultElevation = 4.dp,
         pressedElevation = 8.dp,
         focusedElevation = 8.dp
@@ -278,15 +278,26 @@ fun CustomCard(
     onClick: (() -> Unit)? = null,
     content: @Composable () -> Unit
 ) {
-    Card(
-        modifier = modifier
-            .fillMaxWidth()
-            .clip(shape),
-        elevation = elevation,
-        shape = shape,
-        onClick = onClick
-    ) {
-        content()
+    val cardModifier = modifier
+        .fillMaxWidth()
+        .clip(shape)
+    if (onClick != null) {
+        Card(
+            modifier = cardModifier,
+            elevation = elevation,
+            shape = shape,
+            onClick = onClick
+        ) {
+            content()
+        }
+    } else {
+        Card(
+            modifier = cardModifier,
+            elevation = elevation,
+            shape = shape
+        ) {
+            content()
+        }
     }
 }
 
@@ -301,9 +312,9 @@ fun StatusChip(
         modifier = modifier
             .height(28.dp)
             .padding(horizontal = 8.dp),
-        colors = androidx.compose.material3.ChipDefaults.elevatedChipColors(
+        colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
             containerColor = color.copy(alpha = 0.12f),
-            contentColor = color
+            labelColor = color
         ),
         shape = RoundedCornerShape(20.dp)
     ) {
@@ -367,16 +378,16 @@ fun PriorityChip(priority: String, modifier: Modifier = Modifier) {
 @Composable
 fun RepairStatusChip(status: String, modifier: Modifier = Modifier) {
     val (text, color, icon) = when (status) {
-        "RECEIVED" -> "تم الاستلام" to Color(0xFF2196F3) to Icons.Filled.Inventory
-        "DIAGNOSING" -> "قيد التشخيص" to Color(0xFFFF9800) to Icons.Filled.Search
-        "WAITING_PARTS" -> "بانتظار القطع" to Color(0xFF9C27B0) to Icons.Filled.LocalShipping
-        "IN_REPAIR" -> "قيد الإصلاح" to Color(0xFF3F51B5) to Icons.Filled.Build
-        "QUALITY_CHECK" -> "فحص الجودة" to Color(0xFF009688) to Icons.Filled.Verified
-        "READY_FOR_PICKUP" -> "جاهز للاستلام" to Color(0xFF4CAF50) to Icons.Filled.CheckCircle
-        "DELIVERED" -> "تم التسليم" to Color(0xFF8BC34A) to Icons.Filled.DoneAll
-        "CANCELLED" -> "ملغي" to Color(0xFFF44336) to Icons.Filled.Cancel
-        "ON_HOLD" -> "معلق" to Color(0xFF607D8B) to Icons.Filled.PauseCircle
-        else -> status to Color(0xFF757575) to Icons.Filled.Help
+        "RECEIVED" -> ("تم الاستلام" to Color(0xFF2196F3)) to Icons.Filled.Inventory
+        "DIAGNOSING" -> ("قيد التشخيص" to Color(0xFFFF9800)) to Icons.Filled.Search
+        "WAITING_PARTS" -> ("بانتظار القطع" to Color(0xFF9C27B0)) to Icons.Filled.LocalShipping
+        "IN_REPAIR" -> ("قيد الإصلاح" to Color(0xFF3F51B5)) to Icons.Filled.Build
+        "QUALITY_CHECK" -> ("فحص الجودة" to Color(0xFF009688)) to Icons.Filled.Verified
+        "READY_FOR_PICKUP" -> ("جاهز للاستلام" to Color(0xFF4CAF50)) to Icons.Filled.CheckCircle
+        "DELIVERED" -> ("تم التسليم" to Color(0xFF8BC34A)) to Icons.Filled.DoneAll
+        "CANCELLED" -> ("ملغي" to Color(0xFFF44336)) to Icons.Filled.Cancel
+        "ON_HOLD" -> ("معلق" to Color(0xFF607D8B)) to Icons.Filled.PauseCircle
+        else -> (status to Color(0xFF757575)) to Icons.Filled.Help
     }
     StatusChip(text = text, color = color, icon = icon, modifier = modifier)
 }

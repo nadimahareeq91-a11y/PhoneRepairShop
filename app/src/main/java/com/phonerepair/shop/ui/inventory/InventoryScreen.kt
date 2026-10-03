@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,6 +14,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -39,7 +42,136 @@ import com.phonerepair.shop.ui.theme.PhoneRepairTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import androidx.compose.material.icons.Icons
+
+val sampleParts = listOf(
+    PartItem(
+        id = "PART-001",
+        barcode = "1234567890123",
+        sku = "SCR-IP15PM-BLK",
+        name = "شاشة iPhone 15 Pro Max أصلية",
+        nameAr = "شاشة آيفون 15 برو ماكس أصلية",
+        category = "الشاشات",
+        compatibleDevices = listOf("iPhone 15 Pro Max"),
+        purchasePrice = 450.0,
+        salePrice = 750.0,
+        currentStock = 3,
+        minStockLevel = 5,
+        maxStockLevel = 20,
+        unit = "قطعة",
+        supplierName = "شركة الشاشات الذهبية",
+        location = "رف أ-1",
+        isActive = true
+    ),
+    PartItem(
+        id = "PART-002",
+        barcode = "1234567890124",
+        sku = "BAT-IP15-STD",
+        name = "بطارية iPhone 15 أصلية",
+        nameAr = "بطارية آيفون 15 أصلية",
+        category = "البطاريات",
+        compatibleDevices = listOf("iPhone 15", "iPhone 15 Plus"),
+        purchasePrice = 85.0,
+        salePrice = 180.0,
+        currentStock = 12,
+        minStockLevel = 10,
+        maxStockLevel = 50,
+        unit = "قطعة",
+        supplierName = "مورد البطاريات المعتمد",
+        location = "رف ب-3",
+        isActive = true
+    ),
+    PartItem(
+        id = "PART-003",
+        barcode = "1234567890125",
+        sku = "CAM-S24U-MAIN",
+        name = "كاميرا خلفية رئيسية S24 Ultra",
+        nameAr = "كاميرا خلفية رئيسية اس 24 الترا",
+        category = "الكاميرات",
+        compatibleDevices = listOf("Galaxy S24 Ultra"),
+        purchasePrice = 220.0,
+        salePrice = 380.0,
+        currentStock = 0,
+        minStockLevel = 3,
+        maxStockLevel = 15,
+        unit = "قطعة",
+        supplierName = "شركة الكاميرات المتطورة",
+        location = "رف ج-2",
+        isActive = true
+    ),
+    PartItem(
+        id = "PART-004",
+        barcode = "1234567890126",
+        sku = "PORT-USB-C-UNI",
+        name = "منفذ شحن USB-C عام",
+        nameAr = "منفذ شحن يو اس بي سي عام",
+        category = "منافذ الشحن",
+        compatibleDevices = listOf("Android", "iPhone 15+"),
+        purchasePrice = 12.0,
+        salePrice = 35.0,
+        currentStock = 45,
+        minStockLevel = 20,
+        maxStockLevel = 100,
+        unit = "قطعة",
+        supplierName = "مورد الإكسسوارات",
+        location = "درج 1",
+        isActive = true
+    ),
+    PartItem(
+        id = "PART-005",
+        barcode = "1234567890127",
+        sku = "SCR-IP13-BLK",
+        name = "شاشة iPhone 13 أصلية",
+        nameAr = "شاشة آيفون 13 أصلية",
+        category = "الشاشات",
+        compatibleDevices = listOf("iPhone 13", "iPhone 13 Pro"),
+        purchasePrice = 280.0,
+        salePrice = 480.0,
+        currentStock = 2,
+        minStockLevel = 5,
+        maxStockLevel = 20,
+        unit = "قطعة",
+        supplierName = "شركة الشاشات الذهبية",
+        location = "رف أ-2",
+        isActive = true
+    )
+)
+
+data class PartItem(
+    val id: String,
+    val barcode: String?,
+    val sku: String,
+    val name: String,
+    val nameAr: String?,
+    val category: String,
+    val compatibleDevices: List<String>,
+    val purchasePrice: Double,
+    val salePrice: Double,
+    val currentStock: Int,
+    val minStockLevel: Int,
+    val maxStockLevel: Int,
+    val unit: String,
+    val supplierName: String?,
+    val location: String?,
+    val isActive: Boolean
+) {
+    val isLowStock: Boolean get() = currentStock <= minStockLevel && currentStock > 0
+    val isOutOfStock: Boolean get() = currentStock <= 0
+    val profitMargin: Double get() = if (purchasePrice > 0) ((salePrice - purchasePrice) / purchasePrice) * 100 else 0.0
+    
+    val stockStatus: StockStatus get() = when {
+        currentStock <= 0 -> StockStatus.OUT_OF_STOCK
+        currentStock <= minStockLevel -> StockStatus.LOW
+        currentStock >= maxStockLevel -> StockStatus.OVERSTOCK
+        else -> StockStatus.NORMAL
+    }
+    
+    enum class StockStatus(val displayName: String, val color: Color, val icon: ImageVector) {
+        NORMAL("طبيعي", Color(0xFF4CAF50), Icons.Default.CheckCircle),
+        LOW("منخفض", Color(0xFFFF9800), Icons.Default.Warning),
+        OUT_OF_STOCK("نفد", Icons.Default.Block, MaterialTheme.colorScheme.error),
+        OVERSTOCK("زائد", Color(0xFF2196F3), Icons.Default.TrendingUp)
+    }
+}
 
 @Composable
 fun InventoryScreen(
@@ -176,7 +308,7 @@ fun StatsRow(parts: List<PartItem>) {
 }
 
 @Composable
-fun StatBox(title: String, value: String, icon: ImageVector, color: Color) {
+fun RowScope.StatBox(title: String, value: String, icon: ImageVector, color: Color) {
     Card(
         modifier = Modifier
             .weight(1f)
@@ -260,7 +392,7 @@ fun CategoryFilterChips(
                     selected = isSelected,
                     onClick = { onCategoryChange(value) },
                     label = { Text(label, fontSize = 11.sp) },
-                    colors = androidx.compose.material3.FilterChipDefaults.colors(
+                    colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
                         selectedContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
@@ -313,7 +445,7 @@ fun PartCard(
                             androidx.compose.material3.Chip(
                                 modifier = Modifier.height(20.dp),
                                 onClick = { /* copy barcode */ },
-                                colors = androidx.compose.material3.ChipDefaults.chipColors(
+                                colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                                     containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
                                 ),
                                 shape = RoundedCornerShape(10.dp)
@@ -426,7 +558,7 @@ fun PartCard(
 }
 
 @Composable
-fun InfoItem(
+fun RowScope.InfoItem(
     icon: ImageVector,
     label: String,
     value: String,
@@ -450,135 +582,6 @@ private fun formatCurrency(amount: Double): String {
 }
 
 // Sample Data
-val sampleParts = listOf(
-    PartItem(
-        id = "PART-001",
-        barcode = "1234567890123",
-        sku = "SCR-IP15PM-BLK",
-        name = "شاشة iPhone 15 Pro Max أصلية",
-        nameAr = "شاشة آيفون 15 برو ماكس أصلية",
-        category = "الشاشات",
-        compatibleDevices = listOf("iPhone 15 Pro Max"),
-        purchasePrice = 450.0,
-        salePrice = 750.0,
-        currentStock = 3,
-        minStockLevel = 5,
-        maxStockLevel = 20,
-        unit = "قطعة",
-        supplierName = "شركة الشاشات الذهبية",
-        location = "رف أ-1",
-        isActive = true
-    ),
-    PartItem(
-        id = "PART-002",
-        barcode = "1234567890124",
-        sku = "BAT-IP15-STD",
-        name = "بطارية iPhone 15 أصلية",
-        nameAr = "بطارية آيفون 15 أصلية",
-        category = "البطاريات",
-        compatibleDevices = listOf("iPhone 15", "iPhone 15 Plus"),
-        purchasePrice = 85.0,
-        salePrice = 180.0,
-        currentStock = 12,
-        minStockLevel = 10,
-        maxStockLevel = 50,
-        unit = "قطعة",
-        supplierName = "مورد البطاريات المعتمد",
-        location = "رف ب-3",
-        isActive = true
-    ),
-    PartItem(
-        id = "PART-003",
-        barcode = "1234567890125",
-        sku = "CAM-S24U-MAIN",
-        name = "كاميرا خلفية رئيسية S24 Ultra",
-        nameAr = "كاميرا خلفية رئيسية اس 24 الترا",
-        category = "الكاميرات",
-        compatibleDevices = listOf("Galaxy S24 Ultra"),
-        purchasePrice = 220.0,
-        salePrice = 380.0,
-        currentStock = 0,
-        minStockLevel = 3,
-        maxStockLevel = 15,
-        unit = "قطعة",
-        supplierName = "شركة الكاميرات المتطورة",
-        location = "رف ج-2",
-        isActive = true
-    ),
-    PartItem(
-        id = "PART-004",
-        barcode = "1234567890126",
-        sku = "PORT-USB-C-UNI",
-        name = "منفذ شحن USB-C عام",
-        nameAr = "منفذ شحن يو اس بي سي عام",
-        category = "منافذ الشحن",
-        compatibleDevices = listOf("Android", "iPhone 15+"),
-        purchasePrice = 12.0,
-        salePrice = 35.0,
-        currentStock = 45,
-        minStockLevel = 20,
-        maxStockLevel = 100,
-        unit = "قطعة",
-        supplierName = "مورد الإكسسوارات",
-        location = "درج 1",
-        isActive = true
-    ),
-    PartItem(
-        id = "PART-005",
-        barcode = "1234567890127",
-        sku = "SCR-IP13-BLK",
-        name = "شاشة iPhone 13 أصلية",
-        nameAr = "شاشة آيفون 13 أصلية",
-        category = "الشاشات",
-        compatibleDevices = listOf("iPhone 13", "iPhone 13 Pro"),
-        purchasePrice = 280.0,
-        salePrice = 480.0,
-        currentStock = 2,
-        minStockLevel = 5,
-        maxStockLevel = 20,
-        unit = "قطعة",
-        supplierName = "شركة الشاشات الذهبية",
-        location = "رف أ-2",
-        isActive = true
-    )
-)
-
-data class PartItem(
-    val id: String,
-    val barcode: String?,
-    val sku: String,
-    val name: String,
-    val nameAr: String?,
-    val category: String,
-    val compatibleDevices: List<String>,
-    val purchasePrice: Double,
-    val salePrice: Double,
-    val currentStock: Int,
-    val minStockLevel: Int,
-    val maxStockLevel: Int,
-    val unit: String,
-    val supplierName: String?,
-    val location: String?,
-    val isActive: Boolean
-) {
-    val isLowStock: Boolean get() = currentStock <= minStockLevel && currentStock > 0
-    val isOutOfStock: Boolean get() = currentStock <= 0
-    val profitMargin: Double get() = if (purchasePrice > 0) ((salePrice - purchasePrice) / purchasePrice) * 100 else 0.0
-    
-    val stockStatus: StockStatus get() = when {
-        currentStock <= 0 -> StockStatus.OUT_OF_STOCK
-        currentStock <= minStockLevel -> StockStatus.LOW
-        currentStock >= maxStockLevel -> StockStatus.OVERSTOCK
-        else -> StockStatus.NORMAL
-    }
-    
-    enum class StockStatus(val displayName: String, val color: Color, val icon: ImageVector) {
-        NORMAL("طبيعي", Color(0xFF4CAF50), Icons.Default.CheckCircle),
-        LOW("منخفض", Color(0xFFFF9800), Icons.Default.Warning),
-        OUT_OF_STOCK("نفد", Icons.Default.Block, MaterialTheme.colorScheme.error),
-        OVERSTOCK("زائد", Color(0xFF2196F3), Icons.Default.TrendingUp)
-    }
-}
 
 class InventoryViewModel : androidx.lifecycle.ViewModel() {
     // TODO: Implement data loading

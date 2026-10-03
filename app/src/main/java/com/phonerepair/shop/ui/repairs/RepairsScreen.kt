@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,6 +14,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Chip
@@ -41,7 +44,6 @@ import com.phonerepair.shop.ui.theme.PhoneRepairTheme
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import androidx.compose.material.icons.Icons
 
 @Composable
 fun RepairsScreen(
@@ -199,7 +201,7 @@ fun FilterChipsSection(
                 val isSelected = selectedStatus == value
                 Chip(
                     onClick = { onStatusChange(value) },
-                    colors = androidx.compose.material3.ChipDefaults.chipColors(
+                    colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainerHighest,
                         contentColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
                     ),
@@ -228,7 +230,7 @@ fun FilterChipsSection(
                 val isSelected = selectedPriority == value
                 Chip(
                     onClick = { onPriorityChange(value) },
-                    colors = androidx.compose.material3.ChipDefaults.chipColors(
+                    colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainerHighest,
                         contentColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
                     ),
@@ -359,7 +361,7 @@ fun RepairOrderCard(
 }
 
 @Composable
-fun InfoItem(icon: ImageVector, label: String, value: String) {
+fun RowScope.InfoItem(icon: ImageVector, label: String, value: String) {
     Row(
         modifier = Modifier.weight(1f),
         horizontalArrangement = Arrangement.spacedBy(6.dp),
@@ -427,7 +429,7 @@ val sampleOrders = listOf(
         reportedIssue = "الكاميرا الخلفية لا تفتح",
         status = "DIAGNOSING",
         priority = "NORMAL",
-        technicianName = nil,
+        technicianName = null,
         estimatedCost = 0.0,
         createdAt = System.currentTimeMillis() - 3600000
     ),
@@ -439,7 +441,7 @@ val sampleOrders = listOf(
         reportedIssue = " Face ID لا يعمل بعد سقوط",
         status = "RECEIVED",
         priority = "HIGH",
-        technicianName = nil,
+        technicianName = null,
         estimatedCost = 0.0,
         createdAt = System.currentTimeMillis() - 1800000
     )
