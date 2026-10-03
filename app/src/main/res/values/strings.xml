@@ -307,7 +307,7 @@
     <string name="share">مشاركة</string>
     <string name="print">طباعة</string>
     <string name="export">تصدير</string>
-    <string name="import">استيراد</string>
+    <string name="import_data">استيراد</string>
     
     <!-- Validation -->
     <string name="field_required">هذا الحقل مطلوب</string>
