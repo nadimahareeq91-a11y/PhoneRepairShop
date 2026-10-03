@@ -405,7 +405,7 @@ fun EmptyState(
                     text = message,
                     fontSize = 14.sp,
                     color = androidx.compose.material3.MaterialTheme.colorScheme.onSurfaceVariant,
-                    textAlign = androidx.compose.ui.text.TextAlign.Center
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
                 )
             }
             actionText?.let { text ->

@@ -112,7 +112,7 @@ fun AuthScreen(
                             fontSize = 28.sp,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onSurface,
-                            textAlign = androidx.compose.ui.text.TextAlign.Center
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
                         )
                         Text(
                             text = if (isLogin) 
@@ -121,7 +121,7 @@ fun AuthScreen(
                                 "املأ البيانات أدناه للبدء",
                             fontSize = 14.sp,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            textAlign = androidx.compose.ui.text.TextAlign.Center
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
                         )
                     }
 
@@ -201,7 +201,7 @@ fun AuthScreen(
                             text = msg,
                             fontSize = 12.sp,
                             color = MaterialTheme.colorScheme.error,
-                            textAlign = androidx.compose.ui.text.TextAlign.Center,
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center,
                             modifier = Modifier.fillMaxWidth()
                         )
                     }

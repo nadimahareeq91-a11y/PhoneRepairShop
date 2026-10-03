@@ -170,7 +170,7 @@ fun StatBox(title: String, value: String, icon: ImageVector, color: Color) {
                     Icon(imageVector = icon, contentDescription = null, modifier = Modifier.size(16.dp), tint = color)
                     Text(value, fontSize = 16.sp, fontWeight = FontWeight.Bold, color = color)
                 }
-                Text(title, fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = androidx.compose.ui.text.TextAlign.Center)
+                Text(title, fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
             }
         }
     }

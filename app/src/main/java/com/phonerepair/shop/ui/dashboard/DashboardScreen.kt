@@ -301,7 +301,7 @@ fun ActionCard(action: QuickAction) {
                     text = action.title,
                     fontSize = 13.sp,
                     fontWeight = FontWeight.Medium,
-                    textAlign = androidx.compose.ui.text.TextAlign.Center,
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center,
                     maxLines = 2,
                     overflow = androidx.compose.ui.text.TextOverflow.Ellipsis
                 )
