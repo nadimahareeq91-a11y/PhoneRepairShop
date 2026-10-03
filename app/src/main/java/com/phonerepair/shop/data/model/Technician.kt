@@ -2,12 +2,7 @@ package com.phonerepair.shop.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.firebase.firestore.ServerTimestamp
-import kotlinx.serialization.Serializable
-import java.io.Serializable
 import java.util.*
-
-@Serializable
 @Entity(tableName = "technicians")
 data class Technician(
     @PrimaryKey
@@ -26,12 +21,10 @@ data class Technician(
     val notes: String? = null,
     val completedOrders: Int = 0,
     val rating: Double = 0.0,
-    @ServerTimestamp
     val createdAt: Date? = null,
-    @ServerTimestamp
     val updatedAt: Date? = null,
     val isSynced: Boolean = false
-) : Serializable {
+) {
     enum class Specialization(val displayName: String) {
         SCREEN_REPLACEMENT("استبدال شاشات"),
         BOARD_REPAIR("إصلاح لوحات أم"),

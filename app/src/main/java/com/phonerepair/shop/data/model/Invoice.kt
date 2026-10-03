@@ -2,12 +2,7 @@ package com.phonerepair.shop.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.firebase.firestore.ServerTimestamp
-import kotlinx.serialization.Serializable
-import java.io.Serializable
 import java.util.*
-
-@Serializable
 @Entity(tableName = "invoices")
 data class Invoice(
     @PrimaryKey
@@ -28,13 +23,11 @@ data class Invoice(
     val notes: String? = null,
     val terms: String? = null,
     val dueDate: Date? = null,
-    @ServerTimestamp
     val createdAt: Date? = null,
-    @ServerTimestamp
     val updatedAt: Date? = null,
     val printedAt: Date? = null,
     val isSynced: Boolean = false
-) : Serializable {
+) {
     enum class PaymentMethod(val displayName: String, val icon: String) {
         CASH("نقدي", "cash"),
         CARD("بطاقة", "card"),
@@ -64,8 +57,6 @@ data class Invoice(
         }
     }
 }
-
-@Serializable
 data class InvoiceItem(
     val partId: String,
     val partName: String,
@@ -74,7 +65,7 @@ data class InvoiceItem(
     val discount: Double = 0.0,
     val taxRate: Double = 0.15,
     val total: Double
-) : Serializable {
+) {
     fun toMap(): Map<String, Any> = mapOf(
         "partId" to partId,
         "partName" to partName,
@@ -85,17 +76,14 @@ data class InvoiceItem(
         "total" to total
     )
 }
-
-@Serializable
 data class Payment(
     val id: String = UUID.randomUUID().toString(),
     val amount: Double,
     val method: Invoice.PaymentMethod,
     val reference: String? = null,
     val notes: String? = null,
-    @ServerTimestamp
     val paidAt: Date? = null
-) : Serializable {
+) {
     fun toMap(): Map<String, Any> = mapOf(
         "id" to id,
         "amount" to amount,

@@ -2,10 +2,6 @@ package com.phonerepair.shop.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.serialization.Serializable
-import java.io.Serializable
-
-@Serializable
 @Entity(tableName = "app_settings")
 data class AppSettings(
     @PrimaryKey
@@ -33,7 +29,7 @@ data class AppSettings(
     val weekendDays: List<Int> = listOf(6), // Friday
     val theme: Theme = Theme.SYSTEM,
     val language: String = "ar"
-) : Serializable {
+) {
     enum class Theme(val displayName: String) {
         LIGHT("فاتح"),
         DARK("داكن"),

@@ -1,14 +1,13 @@
 package com.phonerepair.shop.data.repository
 
-import com.google.firebase.firestore.FirebaseFirestore
-import com.phonerepair.shop.data.local.Dao
+import com.phonerepair.shop.data.local.*
 import com.phonerepair.shop.data.model.*
 import com.phonerepair.shop.data.remote.FirestoreDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
 class RepairOrderRepositoryImpl(

@@ -1,11 +1,7 @@
 package com.phonerepair.shop.ui.theme
 
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 
 // Brand Colors - Modern Teal/Green theme for repair shop
@@ -94,17 +90,3 @@ val DarkColorScheme = darkColorScheme(
     inversePrimary = Primary,
     scrim = Color.Black
 )
-
-@Composable
-fun PhoneRepairTheme(
-    darkTheme: Boolean = false,
-    content: @Composable () -> Unit
-) {
-    val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        shapes = Shapes,
-        content = content
-    )
-}

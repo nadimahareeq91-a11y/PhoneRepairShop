@@ -64,3 +64,5 @@ google-services.json
 
 # Release
 *.release.*
+# stray empty dirs created by tooling
+/storage

@@ -84,18 +84,25 @@ fun ReportsScreen(
                     Text("التقارير والإحصائيات", fontSize = 28.sp, fontWeight = FontWeight.Bold)
                     Text("تحليل أداء المحل", fontSize = 14.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
-                androidx.compose.material3.Menu(
-                    expanded = { /* handle menu */ },
-                    onDismissRequest = { /* handle dismiss */ }
-                ) {
+                var periodMenuExpanded by remember { mutableStateOf(false) }
+                Box {
+                    androidx.compose.material3.IconButton(onClick = { periodMenuExpanded = true }) {
+                        Icon(
+                            imageVector = androidx.compose.material.icons.Icons.Default.DateRange,
+                            contentDescription = "اختر الفترة"
+                        )
+                    }
                     androidx.compose.material3.DropdownMenu(
-                        expanded = true,
-                        onDismissRequest = { /* handle dismiss */ }
+                        expanded = periodMenuExpanded,
+                        onDismissRequest = { periodMenuExpanded = false }
                     ) {
                         ReportPeriod.values().forEach { period ->
                             androidx.compose.material3.DropdownMenuItem(
-                                onClick = { selectedPeriod = period },
-                                content = { Text(period.displayName, fontSize = 14.sp) }
+                                text = { Text(period.displayName, fontSize = 14.sp) },
+                                onClick = {
+                                    selectedPeriod = period
+                                    periodMenuExpanded = false
+                                }
                             )
                         }
                     }

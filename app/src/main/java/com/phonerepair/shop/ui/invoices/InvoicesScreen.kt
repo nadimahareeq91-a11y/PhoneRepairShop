@@ -81,7 +81,7 @@ fun InvoicesScreen(
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             CustomIconButton(
                                 onClick = { showFilters = !showFilters },
-                                icon = if (showFilters) Icons.Default.FilterList else Icons.Default.FilterListOutlined,
+                                icon = if (showFilters) Icons.Default.FilterList else Icons.Outlined.FilterList,
                                 contentDescription = "تصفية"
                             )
                             CustomButton(

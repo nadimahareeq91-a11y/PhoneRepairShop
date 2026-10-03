@@ -2,12 +2,7 @@ package com.phonerepair.shop.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.firebase.firestore.ServerTimestamp
-import kotlinx.serialization.Serializable
-import java.io.Serializable
 import java.util.*
-
-@Serializable
 @Entity(tableName = "repair_orders")
 data class RepairOrder(
     @PrimaryKey
@@ -32,14 +27,12 @@ data class RepairOrder(
     val partsUsed: List<UsedPart> = emptyList(),
     val notes: String? = null,
     val images: List<String> = emptyList(),
-    @ServerTimestamp
     val createdAt: Date? = null,
-    @ServerTimestamp
     val updatedAt: Date? = null,
     val completedAt: Date? = null,
     val warrantyDays: Int = 30,
     val isSynced: Boolean = false
-) : Serializable {
+) {
     enum class RepairStatus(val displayName: String, val color: Int) {
         RECEIVED("تم الاستلام", 0xFF2196F3),
         DIAGNOSING("قيد التشخيص", 0xFFFF9800),
@@ -64,15 +57,13 @@ data class RepairOrder(
     fun getStatusDisplayName(): String = status.displayName
     fun getPriorityDisplayName(): String = priority.displayName
 }
-
-@Serializable
 data class UsedPart(
     val partId: String,
     val partName: String,
     val quantity: Int,
     val unitPrice: Double,
     val totalPrice: Double
-) : Serializable {
+) {
     fun toMap(): Map<String, Any> = mapOf(
         "partId" to partId,
         "partName" to partName,

@@ -30,7 +30,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.input.pointer.clickable
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -85,7 +84,7 @@ fun RepairsScreen(
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             CustomIconButton(
                                 onClick = { showFilters = !showFilters },
-                                icon = if (showFilters) Icons.Default.FilterList else Icons.Default.FilterListOutlined,
+                                icon = if (showFilters) Icons.Default.FilterList else Icons.Outlined.FilterList,
                                 contentDescription = "تصفية"
                             )
                             CustomButton(

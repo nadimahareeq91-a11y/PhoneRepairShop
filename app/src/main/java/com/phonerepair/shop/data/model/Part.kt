@@ -2,12 +2,7 @@ package com.phonerepair.shop.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.firebase.firestore.ServerTimestamp
-import kotlinx.serialization.Serializable
-import java.io.Serializable
 import java.util.*
-
-@Serializable
 @Entity(tableName = "parts")
 data class Part(
     @PrimaryKey
@@ -32,13 +27,11 @@ data class Part(
     val images: List<String> = emptyList(),
     val isActive: Boolean = true,
     val isSerialized: Boolean = false,
-    @ServerTimestamp
     val createdAt: Date? = null,
-    @ServerTimestamp
     val updatedAt: Date? = null,
     val lastRestockedAt: Date? = null,
     val isSynced: Boolean = false
-) : Serializable {
+) {
     enum class PartCategory(val displayName: String) {
         SCREEN("شاشات"),
         BATTERY("بطاريات"),

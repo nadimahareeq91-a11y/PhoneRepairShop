@@ -3,15 +3,20 @@ package com.phonerepair.shop.di
 import android.content.Context
 import androidx.room.Room
 import com.phonerepair.shop.data.local.AppDatabase
-import com.phonerepair.shop.data.local.Dao
+import com.phonerepair.shop.data.local.CustomerDao
+import com.phonerepair.shop.data.local.InvoiceDao
+import com.phonerepair.shop.data.local.PartDao
+import com.phonerepair.shop.data.local.RepairOrderDao
+import com.phonerepair.shop.data.local.SettingsDao
+import com.phonerepair.shop.data.local.TechnicianDao
 import com.phonerepair.shop.data.remote.FirestoreDataSource
 import com.phonerepair.shop.data.repository.*
-import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.Singleton
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)

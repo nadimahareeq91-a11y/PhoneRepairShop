@@ -34,7 +34,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.input.pointer.clickable
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -273,7 +272,7 @@ fun AuthScreen(
                             onClick = {
                                 // Apple Sign In
                             },
-                            icon = androidx.compose.material.icons.Icons.Default.Apple,
+                            icon = androidx.compose.material.icons.Icons.Default.Phone,
                             modifier = Modifier.weight(1f)
                         )
                     }

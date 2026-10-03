@@ -2,12 +2,7 @@ package com.phonerepair.shop.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.firebase.firestore.ServerTimestamp
-import kotlinx.serialization.Serializable
-import java.io.Serializable
 import java.util.*
-
-@Serializable
 @Entity(tableName = "customers")
 data class Customer(
     @PrimaryKey
@@ -24,13 +19,11 @@ data class Customer(
     val notes: String? = null,
     val isBlacklisted: Boolean = false,
     val blacklistReason: String? = null,
-    @ServerTimestamp
     val createdAt: Date? = null,
-    @ServerTimestamp
     val updatedAt: Date? = null,
     val lastVisitAt: Date? = null,
     val isSynced: Boolean = false
-) : Serializable {
+) {
     enum class ContactMethod(val displayName: String) {
         PHONE("هاتف"),
         SMS("رسائل نصية"),

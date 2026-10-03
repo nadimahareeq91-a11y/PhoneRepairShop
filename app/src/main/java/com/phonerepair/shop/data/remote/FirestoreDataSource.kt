@@ -5,6 +5,7 @@ import com.phonerepair.shop.data.repository.Result
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.map
 import java.util.*
 
 /**
@@ -59,17 +60,17 @@ class FirestoreDataSource private constructor() {
                 name = "شاشة iPhone 15 Pro Max أصلية", nameAr = "شاشة آيفون 15 برو ماكس أصلية",
                 category = Part.PartCategory.SCREEN, compatibleDevices = listOf("iPhone 15 Pro Max"),
                 purchasePrice = 450.0, salePrice = 750.0, currentStock = 3, minStockLevel = 5, maxStockLevel = 20,
-                unit = "قطعة", supplierName = "شركة الشاشات الذهبية", location = "رف أ-1", isActive = true),
+                unit = Part.Unit.PIECE, supplierName = "شركة الشاشات الذهبية", location = "رف أ-1", isActive = true),
             Part(id = "PART-002", barcode = "1234567890124", sku = "BAT-IP15-STD",
                 name = "بطارية iPhone 15 أصلية", nameAr = "بطارية آيفون 15 أصلية",
                 category = Part.PartCategory.BATTERY, compatibleDevices = listOf("iPhone 15", "iPhone 15 Plus"),
                 purchasePrice = 85.0, salePrice = 180.0, currentStock = 12, minStockLevel = 10, maxStockLevel = 50,
-                unit = "قطعة", supplierName = "مورد البطاريات المعتمد", location = "رف ب-3", isActive = true),
+                unit = Part.Unit.PIECE, supplierName = "مورد البطاريات المعتمد", location = "رف ب-3", isActive = true),
             Part(id = "PART-003", barcode = "1234567890125", sku = "CAM-S24U-MAIN",
                 name = "كاميرا خلفية رئيسية S24 Ultra", nameAr = "كاميرا خلفية رئيسية اس 24 الترا",
                 category = Part.PartCategory.CAMERA, compatibleDevices = listOf("Galaxy S24 Ultra"),
                 purchasePrice = 220.0, salePrice = 380.0, currentStock = 0, minStockLevel = 3, maxStockLevel = 15,
-                unit = "قطعة", supplierName = "شركة الكاميرات المتطورة", location = "رف ج-2", isActive = true)
+                unit = Part.Unit.PIECE, supplierName = "شركة الكاميرات المتطورة", location = "رف ج-2", isActive = true)
         )
         sampleParts.forEach { parts[it.id] = it }
         _partsFlow.value = parts.values.toList()
@@ -92,7 +93,7 @@ class FirestoreDataSource private constructor() {
                 specialization = listOf(Technician.Specialization.SCREEN_REPLACEMENT, Technician.Specialization.BOARD_REPAIR),
                 skillLevel = Technician.SkillLevel.SENIOR, isActive = true),
             Technician(id = "TECH-002", userId = "user-2", name = "فاطمة سالم", phone = "0552223344",
-                specialization = listOf(Technician.Specialization.BATTERY, Technician.Specialization.CHARGING_PORT),
+                specialization = listOf(Technician.Specialization.MICROSOLDERING, Technician.Specialization.DIAGNOSTICS),
                 skillLevel = Technician.SkillLevel.INTERMEDIATE, isActive = true)
         )
         sampleTechs.forEach { technicians[it.id] = it }
