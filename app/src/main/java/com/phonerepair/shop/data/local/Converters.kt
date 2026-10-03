@@ -93,7 +93,7 @@ class Converters {
 
     @TypeConverter
     fun fromUsedPartList(value: String?): List<UsedPart> =
-        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { UsedPart.fromEncoded(it) } ?: emptyList()
+        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.fromEncoded() } ?: emptyList()
 
     @TypeConverter
     fun toUsedPartList(value: List<UsedPart>): String =
@@ -103,7 +103,7 @@ class Converters {
 
     @TypeConverter
     fun fromInvoiceItemList(value: String?): List<InvoiceItem> =
-        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { InvoiceItem.fromEncoded(it) } ?: emptyList()
+        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.fromEncoded() } ?: emptyList()
 
     @TypeConverter
     fun toInvoiceItemList(value: List<InvoiceItem>): String =
@@ -114,7 +114,7 @@ class Converters {
 
     @TypeConverter
     fun fromPaymentList(value: String?): List<Payment> =
-        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { Payment.fromEncoded(it) } ?: emptyList()
+        value?.split(RECORD_SEPARATOR)?.filter { it.isNotBlank() }?.mapNotNull { it.fromEncoded() } ?: emptyList()
 
     @TypeConverter
     fun toPaymentList(value: List<Payment>): String =

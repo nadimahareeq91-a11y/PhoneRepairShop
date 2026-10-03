@@ -92,9 +92,9 @@ fun SettingsScreen(
                 SettingRow(
                     icon = Icons.Default.Language,
                     title = "اللغة",
-                    subtitle = settings.language == "ar" ? "العربية" : "English",
+                    subtitle = if (settings.language == "ar") "العربية" else "English",
                     trailing = {
-                        Text(settings.language == "ar" ? "العربية" : "English", fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text(if (settings.language == "ar") "العربية" else "English", fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     },
                     onClick = { showLanguageDialog = true }
                 )

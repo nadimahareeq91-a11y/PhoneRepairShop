@@ -108,7 +108,7 @@ fun AuthScreen(
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Text(
-                            text = if (isLogin) "مرحباً بعودتك" : "إنشاء حساب جديد",
+                            text = if (isLogin) "مرحباً بعودتك" else "إنشاء حساب جديد",
                             fontSize = 28.sp,
                             fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.onSurface,
@@ -212,7 +212,7 @@ fun AuthScreen(
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
                         CustomButton(
-                            text = if (isLogin) "تسجيل الدخول" : "إنشاء الحساب",
+                            text = if (isLogin) "تسجيل الدخول" else "إنشاء الحساب",
                             onClick = {
                                 if (isLogin) {
                                     if (validateLogin(email, password)) {
@@ -284,7 +284,7 @@ fun AuthScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = if (isLogin) "ليس لديك حساب؟" : "لديك حساب بالفعل؟",
+                            text = if (isLogin) "ليس لديك حساب؟" else "لديك حساب بالفعل؟",
                             fontSize = 14.sp,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -292,7 +292,7 @@ fun AuthScreen(
                             onClick = { isLogin = !isLogin; errorMessage = null }
                         ) {
                             Text(
-                                text = if (isLogin) "إنشاء حساب" : "تسجيل الدخول",
+                                text = if (isLogin) "إنشاء حساب" else "تسجيل الدخول",
                                 fontWeight = FontWeight.SemiBold,
                                 fontSize = 14.sp,
                                 color = MaterialTheme.colorScheme.primary
