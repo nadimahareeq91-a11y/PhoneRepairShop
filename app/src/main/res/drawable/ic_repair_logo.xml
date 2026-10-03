@@ -29,12 +29,10 @@
         android:fillColor="@android:color/white"
         android:pathData="M50,60 L50,75 L55,75 L55,60 Z M45,65 L55,65 L55,68 L45,68 Z"/>
     
-    <!-- Small circle at top (camera) -->
-    <circle
-        android:cx="50"
-        android:cy="35"
-        android:r="3"
-        android:fillColor="@android:color/white"/>
+    <!-- Small circle at top (camera) - VectorDrawable has no <circle>, use two arcs -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M50,32 A3,3 0 1,0 50,38 A3,3 0 1,0 50,32 Z"/>
     
     <!-- Home button at bottom -->
     <path
