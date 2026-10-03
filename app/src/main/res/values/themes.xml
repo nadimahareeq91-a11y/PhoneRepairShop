@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+      The app is rendered entirely with Compose (PhoneRepairTheme is applied in code),
+      so this XML theme only needs to provide a valid no-action-bar shell for the
+      Activity before the first Compose frame is drawn.
+      Framework attrs must be android:-prefixed; AppCompat/Material attrs would
+      require dependencies this project intentionally does not use.
+    -->
     <style name="Theme.PhoneRepairShop" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/secondary</item>
         <item name="android:statusBarColor">@color/primary_dark</item>
         <item name="android:navigationBarColor">@color/background</item>
         <item name="android:windowBackground">@color/background</item>
