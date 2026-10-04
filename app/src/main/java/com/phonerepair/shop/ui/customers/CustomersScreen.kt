@@ -280,7 +280,7 @@ fun InfoItem(icon: ImageVector, label: String, value: String, valueColor: Color 
         if (label.isNotBlank()) {
             Text(label, fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-        Text(value, fontSize = 12.sp, fontWeight = FontWeight.Medium, color = valueColor, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
+        Text(value, fontSize = 12.sp, fontWeight = FontWeight.Medium, color = valueColor, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
     }
 }
 

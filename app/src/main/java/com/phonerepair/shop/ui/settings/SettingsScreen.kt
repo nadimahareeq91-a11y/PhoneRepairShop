@@ -133,8 +133,8 @@ fun SettingsScreen(
                             checked = settings.enableNotifications,
                             onCheckedChange = { settings = settings.copy(enableNotifications = it) },
                             colors = androidx.compose.material3.SwitchDefaults.colors(
-                                thumbColor = MaterialTheme.colorScheme.primary,
-                                trackColor = MaterialTheme.colorScheme.primaryContainer
+                                checkedThumbColor = MaterialTheme.colorScheme.primary,
+                                checkedTrackColor = MaterialTheme.colorScheme.primaryContainer
                             )
                         )
                     },
@@ -204,8 +204,8 @@ fun SettingsScreen(
                             checked = settings.autoBackupEnabled,
                             onCheckedChange = { settings = settings.copy(autoBackupEnabled = it) },
                             colors = androidx.compose.material3.SwitchDefaults.colors(
-                                thumbColor = MaterialTheme.colorScheme.primary,
-                                trackColor = MaterialTheme.colorScheme.primaryContainer
+                                checkedThumbColor = MaterialTheme.colorScheme.primary,
+                                checkedTrackColor = MaterialTheme.colorScheme.primaryContainer
                             )
                         )
                     },
@@ -335,7 +335,7 @@ fun SettingRow(
             .padding(vertical = 4.dp)
             .clickable { onClick() }
             .background(MaterialTheme.colorScheme.surface),
-        headContent = {
+        leadingContent = {
             Icon(
                 imageVector = icon,
                 contentDescription = null,
@@ -343,13 +343,13 @@ fun SettingRow(
                 tint = MaterialTheme.colorScheme.primary
             )
         },
-        content = {
-            Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                Text(title, fontSize = 15.sp, fontWeight = FontWeight.Medium, color = textColor)
-                Text(subtitle, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
-            }
+        headlineContent = {
+            Text(title, fontSize = 15.sp, fontWeight = FontWeight.Medium, color = textColor)
         },
-        tailContent = trailing
+        supportingContent = {
+            Text(subtitle, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
+        },
+        trailingContent = trailing
     )
 }
 

@@ -231,8 +231,8 @@ fun KPICards(data: ReportData) {
         KPIItem("نقاط الولاء الممنوحة", data.loyaltyPointsAwarded.toString(), Icons.Default.Star, Color(0xFFFFB300), data.loyaltyChange)
     )
 
-    androidx.compose.foundation.lazy.LazyHorizontalGrid(
-        rows = androidx.compose.foundation.lazy.GridCells.Fixed(2),
+    LazyHorizontalGrid(
+        rows = GridCells.Fixed(2),
         horizontalArrangement = Arrangement.spacedBy(12.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
         modifier = Modifier.fillMaxWidth()
@@ -381,7 +381,7 @@ fun TopPartsBarChart(data: List<ChartDataPoint>) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
             data.take(5).forEach { point ->
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text(point.label, fontSize = 12.sp, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
+                    Text(point.label, fontSize = 12.sp, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
                     Text("${point.value.toInt()}", fontSize = 12.sp, fontWeight = FontWeight.Bold)
                 }
             }
@@ -398,7 +398,7 @@ fun TechnicianPerformanceChart(data: List<ChartDataPoint>) {
         Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
             data.forEach { point ->
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text(point.label, fontSize = 12.sp, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
+                    Text(point.label, fontSize = 12.sp, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
                     Text("${point.value.toInt()} طلب", fontSize = 12.sp, fontWeight = FontWeight.Bold)
                 }
             }
@@ -448,7 +448,7 @@ data class KPIItem(
 data class ChartDataPoint(
     val label: String,
     val value: Float,
-    val color: Color = MaterialTheme.colorScheme.primary
+    val color: Color = Color(0xFF1976D2)
 )
 
 enum class ReportPeriod(val displayName: String) {
@@ -502,6 +502,7 @@ data class ReportData(
             customerStats = emptyMap()
         )
         
+        @Composable
         fun generateMockData(period: ReportPeriod): ReportData {
             val days = when (period) {
                 ReportPeriod.TODAY -> 1

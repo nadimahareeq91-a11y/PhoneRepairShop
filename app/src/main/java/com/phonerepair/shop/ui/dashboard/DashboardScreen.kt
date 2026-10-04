@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -79,7 +78,7 @@ fun DashboardScreen(
     var lowStockParts by remember { mutableStateOf<List<PartSummary>>(emptyList()) }
     var isLoading by remember { mutableStateOf(true) }
 
-    fun loadData() {
+    suspend fun loadData() {
         // Simulate loading
         kotlinx.coroutines.delay(500)
         stats = DashboardStats(
@@ -119,6 +118,9 @@ fun DashboardScreen(
         loadData()
     }
 
+
+    val statsList = quickStats()
+    val actionsList = quickActions(onNavigateToRepairs, onNavigateToInventory, onNavigateToCustomers, onNavigateToInvoices)
 
     LoadingOverlay(isLoading = isLoading, message = "جاري تحميل لوحة التحكم...") {
         Box(modifier = Modifier.fillMaxSize()) {
@@ -164,7 +166,7 @@ fun DashboardScreen(
                     modifier = Modifier.fillMaxWidth(),
                     contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
                 ) {
-                    items(quickStats()) { stat ->
+                    items(statsList) { stat ->
                         StatCard(stat = stat)
                     }
                 }
@@ -179,7 +181,7 @@ fun DashboardScreen(
                     modifier = Modifier.fillMaxWidth().height(200.dp),
                     contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
                 ) {
-                    items(quickActions(onNavigateToRepairs, onNavigateToInventory, onNavigateToCustomers, onNavigateToInvoices)) { action ->
+                    items(actionsList) { action ->
                         ActionCard(action = action)
                     }
                 }
@@ -323,7 +325,7 @@ fun ActionCard(action: QuickAction) {
                     fontWeight = FontWeight.Medium,
                     textAlign = androidx.compose.ui.text.style.TextAlign.Center,
                     maxLines = 2,
-                    overflow = androidx.compose.ui.text.TextOverflow.Ellipsis
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
                 )
             }
         }
@@ -368,7 +370,7 @@ fun RepairOrderCard(order: RepairOrderSummary, onClick: () -> Unit) {
                     fontSize = 13.sp,
                     color = MaterialTheme.colorScheme.onSurface,
                     maxLines = 1,
-                    overflow = androidx.compose.ui.text.TextOverflow.Ellipsis
+                    overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis
                 )
                 Text(
                     text = formatTimeAgo(order.createdAt),
@@ -482,6 +484,7 @@ data class QuickAction(
     val onClick: () -> Unit
 )
 
+@Composable
 @Composable
 fun quickStats(): List<StatItem> = listOf(
     StatItem("طلبات اليوم", "12", Icons.Default.Assignment, MaterialTheme.colorScheme.primary),

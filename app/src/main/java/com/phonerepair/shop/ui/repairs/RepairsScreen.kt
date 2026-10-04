@@ -26,10 +26,10 @@ import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.SwapVert
 import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Chip
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
@@ -214,16 +214,14 @@ fun FilterChipsSection(
                 val isSelected = selectedStatus == value
                 FilterChip(
                     selected = isSelected,
-
+                    label = { Text(label, fontSize = 11.sp, fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal) },
                     onClick = { onStatusChange(value) },
                     colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainerHighest,
                         labelColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
                     ),
                     shape = RoundedCornerShape(20.dp)
-                ) {
-                    Text(label, fontSize = 11.sp, fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal)
-                }
+                )
             }
         }
         
@@ -245,16 +243,14 @@ fun FilterChipsSection(
                 val isSelected = selectedPriority == value
                 FilterChip(
                     selected = isSelected,
-
+                    label = { Text(label, fontSize = 11.sp, fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal) },
                     onClick = { onPriorityChange(value) },
                     colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainerHighest,
                         labelColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
                     ),
                     shape = RoundedCornerShape(20.dp)
-                ) {
-                    Text(label, fontSize = 11.sp, fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal)
-                }
+                )
             }
         }
     }
@@ -327,7 +323,7 @@ fun RepairOrderCard(
                     Row {
                         Text("العطل المبلغ عنه:", fontSize = 12.sp, fontWeight = FontWeight.Medium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
-                    Text(order.reportedIssue, fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurface, maxLines = 2, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
+                    Text(order.reportedIssue, fontSize = 13.sp, color = MaterialTheme.colorScheme.onSurface, maxLines = 2, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
                 }
             }
             
@@ -387,7 +383,7 @@ fun RowScope.InfoItem(icon: ImageVector, label: String, value: String) {
         Icon(imageVector = icon, contentDescription = null, modifier = Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
         Column {
             Text(label, fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Text(value, fontSize = 12.sp, fontWeight = FontWeight.Medium, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
+            Text(value, fontSize = 12.sp, fontWeight = FontWeight.Medium, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
         }
     }
 }

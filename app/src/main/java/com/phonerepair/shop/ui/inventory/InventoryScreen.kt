@@ -32,6 +32,7 @@ import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.filled.TrendingUp
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -186,7 +187,7 @@ data class PartItem(
     enum class StockStatus(val displayName: String, val color: Color, val icon: ImageVector) {
         NORMAL("طبيعي", Color(0xFF4CAF50), Icons.Default.CheckCircle),
         LOW("منخفض", Color(0xFFFF9800), Icons.Default.Warning),
-        OUT_OF_STOCK("نفد", Icons.Default.Block, MaterialTheme.colorScheme.error),
+        OUT_OF_STOCK("نفد", Color(0xFFF44336), Icons.Default.Block),
         OVERSTOCK("زائد", Color(0xFF2196F3), Icons.Default.TrendingUp)
     }
 }
@@ -412,9 +413,9 @@ fun CategoryFilterChips(
                     label = { Text(label, fontSize = 11.sp) },
                     colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
-                        selectedContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                        selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer,
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
-                        contentColor = MaterialTheme.colorScheme.onSurface
+                        labelColor = MaterialTheme.colorScheme.onSurface
                     ),
                     shape = RoundedCornerShape(20.dp)
                 )
@@ -458,7 +459,7 @@ fun PartCard(
             ) {
                 Column(modifier = Modifier.weight(1f)) {
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Text(part.name, fontSize = 16.sp, fontWeight = FontWeight.Bold, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
+                        Text(part.name, fontSize = 16.sp, fontWeight = FontWeight.Bold, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
                         if (part.barcode != null) {
                             androidx.compose.material3.Surface(
                                 modifier = Modifier.height(20.dp),
@@ -474,7 +475,7 @@ fun PartCard(
                 
                 StatusChip(
                     text = stockStatus.displayName,
-                    color = Color(stockStatus.color),
+                    color = stockStatus.color,
                     icon = stockStatus.icon
                 )
             }
@@ -587,7 +588,7 @@ fun RowScope.InfoItem(
         Icon(imageVector = icon, contentDescription = null, modifier = Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(label, fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Text(value, fontSize = 12.sp, fontWeight = FontWeight.Medium, color = valueColor, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
+            Text(value, fontSize = 12.sp, fontWeight = FontWeight.Medium, color = valueColor, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
         }
     }
 }

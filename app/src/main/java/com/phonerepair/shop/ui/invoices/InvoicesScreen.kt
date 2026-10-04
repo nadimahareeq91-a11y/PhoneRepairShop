@@ -40,6 +40,7 @@ import androidx.compose.material.icons.filled.RemoveCircle
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.outlined.FilterList
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -258,9 +259,9 @@ fun PaymentStatusFilterChips(
                     label = { Text(label, fontSize = 11.sp) },
                     colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         selectedContainerColor = MaterialTheme.colorScheme.primaryContainer,
-                        selectedContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                        selectedLabelColor = MaterialTheme.colorScheme.onPrimaryContainer,
                         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
-                        contentColor = MaterialTheme.colorScheme.onSurface
+                        labelColor = MaterialTheme.colorScheme.onSurface
                     ),
                     shape = RoundedCornerShape(20.dp)
                 )
@@ -309,7 +310,7 @@ fun InvoiceCard(
                 }
                 StatusChip(
                     text = paymentStatus.displayName,
-                    color = Color(paymentStatus.color),
+                    color = paymentStatus.color,
                     icon = paymentStatus.icon
                 )
             }
@@ -413,7 +414,7 @@ fun RowScope.InfoItem(icon: ImageVector, label: String, value: String, valueColo
         Icon(imageVector = icon, contentDescription = null, modifier = Modifier.size(16.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(label, fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Text(value, fontSize = 12.sp, fontWeight = FontWeight.Medium, color = valueColor, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
+            Text(value, fontSize = 12.sp, fontWeight = FontWeight.Medium, color = valueColor, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
         }
     }
 }
@@ -452,7 +453,7 @@ sealed class PaymentStatusObj(val displayName: String, val color: Color, val ico
     object PENDING : PaymentStatusObj("معلق", Color(0xFFFF9800), Icons.Default.Pending)
     object PARTIAL : PaymentStatusObj("مدفوع جزئياً", Color(0xFF2196F3), Icons.Default.RemoveCircle)
     object PAID : PaymentStatusObj("مدفوع بالكامل", Color(0xFF4CAF50), Icons.Default.CheckCircle)
-    object OVERDUE : PaymentStatusObj("متأخر", Icons.Default.Error, MaterialTheme.colorScheme.error)
+    object OVERDUE : PaymentStatusObj("متأخر", Color(0xFFF44336), Icons.Default.Error)
     object REFUNDED : PaymentStatusObj("مسترد", Color(0xFF9C27B0), Icons.Default.MoneyOff)
     object CANCELLED : PaymentStatusObj("ملغي", Color(0xFF607D8B), Icons.Default.Cancel)
 }
