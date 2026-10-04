@@ -25,12 +25,24 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug --no-daemon 2>&1 | tee /tmp/build-debug.log; exit ${PIPESTATUS[0]}
 
+    - name: Publish Build Log
+      if: always()
+      run: |
+        mkdir -p ci-logs
+        grep -vE '^\s*$' /tmp/build-debug.log > ci-logs/build-debug.log || true
+        git config user.email "actions@github.com"
+        git config user.name "github-actions"
+        git checkout -B ci-logs
+        git add ci-logs/build-debug.log
+        git commit -m "ci: build log for ${GITHUB_SHA::8}" --allow-empty
+        git push --force origin ci-logs
+
     - name: Upload Build Log
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: build-log
-        path: /tmp/build-debug.log
+        path: ci-logs/build-debug.log
 
     - name: Upload APK Artifact
       if: always()
