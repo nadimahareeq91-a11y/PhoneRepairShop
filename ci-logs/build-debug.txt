@@ -47,8 +47,8 @@ You can resolve this warning in Android Studio via `Refactor` > `Migrate BuildCo
 > Task :app:processDebugResources
 > Task :app:mergeExtDexDebug
 > Task :app:mergeDebugJniLibFolders FROM-CACHE
-> Task :app:mergeLibDexDebug
 > Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:mergeLibDexDebug
 > Task :app:stripDebugDebugSymbols NO-SOURCE
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
@@ -57,69 +57,10 @@ You can resolve this warning in Android Studio via `Refactor` > `Migrate BuildCo
 > Task :app:kaptDebugKotlin
 
 > Task :app:compileDebugKotlin FAILED
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:283:141 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:13:41 Unresolved reference: LazyHorizontalGrid
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:84:28 Suspend function 'delay' should be called only from a coroutine or another suspend function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:167:27 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:182:27 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:326:57 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:371:57 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:189:29 Type mismatch: inferred type is ImageVector but Color was expected
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:189:50 Type mismatch: inferred type is Color but ImageVector was expected
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:189:64 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:241:71 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
-public val Icons.Outlined.FilterList: ImageVector defined in androidx.compose.material.icons.outlined
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:414:25 Cannot find a parameter with this name: selectedContainerColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:415:25 Cannot find a parameter with this name: selectedContentColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:416:25 Cannot find a parameter with this name: containerColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:417:25 Cannot find a parameter with this name: contentColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:461:139 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:477:35 Type mismatch: inferred type is Color but Int was expected
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:590:145 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:112:71 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
-public val Icons.Outlined.FilterList: ImageVector defined in androidx.compose.material.icons.outlined
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:260:25 Cannot find a parameter with this name: selectedContainerColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:261:25 Cannot find a parameter with this name: selectedContentColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:262:25 Cannot find a parameter with this name: containerColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:263:25 Cannot find a parameter with this name: contentColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:312:35 Type mismatch: inferred type is Color but Int was expected
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:416:145 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:455:48 Type mismatch: inferred type is ImageVector but Color was expected
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:455:69 Type mismatch: inferred type is Color but ImageVector was expected
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:455:83 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:32:35 Cannot access 'Chip': it is private in file
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:102:71 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
-public val Icons.Outlined.FilterList: ImageVector defined in androidx.compose.material.icons.outlined
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:223:21 No value passed for parameter 'label'
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:224:19 Type mismatch: inferred type is () -> Unit but MutableInteractionSource was expected
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:225:21 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:254:21 No value passed for parameter 'label'
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:255:19 Type mismatch: inferred type is () -> Unit but MutableInteractionSource was expected
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:256:21 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:330:160 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:390:125 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:234:38 Unresolved reference: LazyHorizontalGrid
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:235:49 Unresolved reference: GridCells
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:240:9 Unresolved reference: items
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:240:23 Cannot infer a type for this parameter. Please specify it explicitly.
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:241:13 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:384:107 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:401:107 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:451:38 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:505:13 Functions which invoke @Composable functions must be marked with the @Composable annotation
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:540:63 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:136:33 Cannot find a parameter with this name: thumbColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:137:33 Cannot find a parameter with this name: trackColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:207:33 Cannot find a parameter with this name: thumbColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:208:33 Cannot find a parameter with this name: trackColor
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:338:9 Cannot find a parameter with this name: headContent
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:339:13 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:343:38 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:346:9 Cannot find a parameter with this name: content
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:347:13 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:349:152 Unresolved reference: TextOverflow
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:352:9 Cannot find a parameter with this name: tailContent
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:352:9 No value passed for parameter 'headlineContent'
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:488:1 This annotation is not repeatable
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:69:17 Functions which invoke @Composable functions must be marked with the @Composable annotation
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:72:33 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:235:16 Unresolved reference: GridCells
 
 FAILURE: Build failed with an exception.
 
@@ -134,5 +75,5 @@ Execution failed for task ':app:compileDebugKotlin'.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 3m 8s
+BUILD FAILED in 3m 1s
 30 actionable tasks: 28 executed, 2 from cache
