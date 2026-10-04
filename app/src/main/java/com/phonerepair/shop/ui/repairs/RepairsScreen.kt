@@ -199,11 +199,13 @@ fun FilterChipsSection(
         ) {
             statuses.forEach { (value, label) ->
                 val isSelected = selectedStatus == value
-                Chip(
+                FilterChip(
+                    selected = isSelected,
+
                     onClick = { onStatusChange(value) },
                     colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainerHighest,
-                        contentColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
+                        labelColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
                     ),
                     shape = RoundedCornerShape(20.dp)
                 ) {
@@ -228,11 +230,13 @@ fun FilterChipsSection(
         ) {
             priorities.forEach { (value, label) ->
                 val isSelected = selectedPriority == value
-                Chip(
+                FilterChip(
+                    selected = isSelected,
+
                     onClick = { onPriorityChange(value) },
                     colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                         containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainerHighest,
-                        contentColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
+                        labelColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
                     ),
                     shape = RoundedCornerShape(20.dp)
                 ) {

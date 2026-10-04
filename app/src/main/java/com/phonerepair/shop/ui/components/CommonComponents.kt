@@ -221,19 +221,6 @@ fun CustomTextField(
 ) {
     var showError by remember { mutableStateOf(false) }
     
-    val textFieldColors = colors ?: (if (isError) {
-        androidx.compose.material3.TextFieldDefaults.textFieldColors(
-            focusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
-            unfocusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
-            errorContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.errorContainer,
-            errorContentColor = androidx.compose.material3.MaterialTheme.colorScheme.onErrorContainer
-        )
-    } else {
-        androidx.compose.material3.TextFieldDefaults.textFieldColors(
-            focusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest,
-            unfocusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surfaceContainerHighest
-        )
-    })
 
     OutlinedTextField(
         value = value,
@@ -262,7 +249,7 @@ fun CustomTextField(
         maxLines = maxLines,
         textStyle = textStyle ?: androidx.compose.material3.MaterialTheme.typography.bodyLarge,
         enabled = enabled,
-        colors = textFieldColors
+        colors = colors
     )
 }
 
@@ -308,17 +295,14 @@ fun StatusChip(
     modifier: Modifier = Modifier,
     icon: ImageVector? = null
 ) {
-    androidx.compose.material3.Chip(
-        modifier = modifier
-            .height(28.dp)
-            .padding(horizontal = 8.dp),
-        colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
-            containerColor = color.copy(alpha = 0.12f),
-            labelColor = color
-        ),
-        shape = RoundedCornerShape(20.dp)
+    Surface(
+        modifier = modifier.height(28.dp),
+        shape = RoundedCornerShape(20.dp),
+        color = color.copy(alpha = 0.12f),
+        contentColor = color
     ) {
         Row(
+            modifier = Modifier.padding(horizontal = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(4.dp)
         ) {
@@ -378,16 +362,16 @@ fun PriorityChip(priority: String, modifier: Modifier = Modifier) {
 @Composable
 fun RepairStatusChip(status: String, modifier: Modifier = Modifier) {
     val (text, color, icon) = when (status) {
-        "RECEIVED" -> ("تم الاستلام" to Color(0xFF2196F3)) to Icons.Filled.Inventory
-        "DIAGNOSING" -> ("قيد التشخيص" to Color(0xFFFF9800)) to Icons.Filled.Search
-        "WAITING_PARTS" -> ("بانتظار القطع" to Color(0xFF9C27B0)) to Icons.Filled.LocalShipping
-        "IN_REPAIR" -> ("قيد الإصلاح" to Color(0xFF3F51B5)) to Icons.Filled.Build
-        "QUALITY_CHECK" -> ("فحص الجودة" to Color(0xFF009688)) to Icons.Filled.Verified
-        "READY_FOR_PICKUP" -> ("جاهز للاستلام" to Color(0xFF4CAF50)) to Icons.Filled.CheckCircle
-        "DELIVERED" -> ("تم التسليم" to Color(0xFF8BC34A)) to Icons.Filled.DoneAll
-        "CANCELLED" -> ("ملغي" to Color(0xFFF44336)) to Icons.Filled.Cancel
-        "ON_HOLD" -> ("معلق" to Color(0xFF607D8B)) to Icons.Filled.PauseCircle
-        else -> (status to Color(0xFF757575)) to Icons.Filled.Help
+        "RECEIVED" -> Triple("تم الاستلام", Color(0xFF2196F3), Icons.Filled.Inventory)
+        "DIAGNOSING" -> Triple("قيد التشخيص", Color(0xFFFF9800), Icons.Filled.Search)
+        "WAITING_PARTS" -> Triple("بانتظار القطع", Color(0xFF9C27B0), Icons.Filled.LocalShipping)
+        "IN_REPAIR" -> Triple("قيد الإصلاح", Color(0xFF3F51B5), Icons.Filled.Build)
+        "QUALITY_CHECK" -> Triple("فحص الجودة", Color(0xFF009688), Icons.Filled.Verified)
+        "READY_FOR_PICKUP" -> Triple("جاهز للاستلام", Color(0xFF4CAF50), Icons.Filled.CheckCircle)
+        "DELIVERED" -> Triple("تم التسليم", Color(0xFF8BC34A), Icons.Filled.DoneAll)
+        "CANCELLED" -> Triple("ملغي", Color(0xFFF44336), Icons.Filled.Cancel)
+        "ON_HOLD" -> Triple("معلق", Color(0xFF607D8B), Icons.Filled.PauseCircle)
+        else -> Triple(status, Color(0xFF757575), Icons.Filled.Help)
     }
     StatusChip(text = text, color = color, icon = icon, modifier = modifier)
 }

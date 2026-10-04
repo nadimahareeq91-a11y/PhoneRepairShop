@@ -442,15 +442,12 @@ fun PartCard(
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                         Text(part.name, fontSize = 16.sp, fontWeight = FontWeight.Bold, maxLines = 1, overflow = androidx.compose.ui.text.TextOverflow.Ellipsis)
                         if (part.barcode != null) {
-                            androidx.compose.material3.Chip(
+                            androidx.compose.material3.Surface(
                                 modifier = Modifier.height(20.dp),
-                                onClick = { /* copy barcode */ },
-                                colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
-                                    containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
-                                ),
-                                shape = RoundedCornerShape(10.dp)
+                                shape = RoundedCornerShape(10.dp),
+                                color = MaterialTheme.colorScheme.surfaceContainerHighest
                             ) {
-                                Text("باركود", fontSize = 9.sp)
+                                Text("باركود", fontSize = 9.sp, modifier = Modifier.padding(horizontal = 6.dp))
                             }
                         }
                     }

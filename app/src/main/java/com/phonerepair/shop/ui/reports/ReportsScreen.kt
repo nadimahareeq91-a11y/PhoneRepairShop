@@ -195,17 +195,16 @@ fun PeriodSelector(
     ) {
         ReportPeriod.values().forEach { period ->
             val isSelected = selectedPeriod == period
-            androidx.compose.material3.Chip(
+            androidx.compose.material3.FilterChip(
                 selected = isSelected,
                 onClick = { onPeriodChange(period) },
+                label = { Text(period.displayName, fontSize = 12.sp, fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal) },
                 colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
                     containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainerHighest,
-                    contentColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
+                    labelColor = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
                 ),
                 shape = RoundedCornerShape(20.dp)
-            ) {
-                Text(period.displayName, fontSize = 12.sp, fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal)
-            }
+            )
         }
     }
 }

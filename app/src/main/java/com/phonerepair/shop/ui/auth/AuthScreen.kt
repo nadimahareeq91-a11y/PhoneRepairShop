@@ -65,15 +65,15 @@ fun AuthScreen(
     onLoginSuccess: () -> Unit,
     viewModel: AuthViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
 ) {
-    val isLogin by remember { mutableStateOf(true) }
+    var isLogin by remember { mutableStateOf(true) }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
     var fullName by remember { mutableStateOf("") }
     var phone by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
-    val errorMessage by remember { mutableStateOf<String?>(null) }
-    val showPassword by remember { mutableStateOf(false) }
+    var errorMessage by remember { mutableStateOf<String?>(null) }
+    var showPassword by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -178,8 +178,9 @@ fun AuthScreen(
                             else 
                                 Icons.Filled.VisibilityOff,
                             onTrailingIconClick = { showPassword = !showPassword },
-                            visualTransformation = if (showPassword) 
-                            else 
+                            visualTransformation = if (showPassword)
+                                VisualTransformation.None
+                            else
                                 PasswordVisualTransformation(),
                             isError = isLogin && errorMessage != null
                         )
@@ -196,8 +197,9 @@ fun AuthScreen(
                                 else 
                                     Icons.Filled.VisibilityOff,
                                 onTrailingIconClick = { showPassword = !showPassword },
-                                visualTransformation = if (showPassword) 
-                                else 
+                                visualTransformation = if (showPassword)
+                                    VisualTransformation.None
+                                else
                                     PasswordVisualTransformation()
                             )
                         }
@@ -331,7 +333,7 @@ private fun validateRegister(
 class AuthViewModel : androidx.lifecycle.ViewModel() {
     fun login(email: String, password: String, callback: (Boolean, String?) -> Unit) {
         // TODO: Implement Firebase Auth
-        androidx.lifecycle.viewModelScope.launch {
+        viewModelScope.launch {
             kotlinx.coroutines.delay(1000)
             callback(true, null)
         }
@@ -339,7 +341,7 @@ class AuthViewModel : androidx.lifecycle.ViewModel() {
     
     fun register(fullName: String, phone: String, email: String, password: String, callback: (Boolean, String?) -> Unit) {
         // TODO: Implement Firebase Auth
-        androidx.lifecycle.viewModelScope.launch {
+        viewModelScope.launch {
             kotlinx.coroutines.delay(1000)
             callback(true, null)
         }
@@ -347,7 +349,7 @@ class AuthViewModel : androidx.lifecycle.ViewModel() {
     
     fun signInWithGoogle(callback: (Boolean, String?) -> Unit) {
         // TODO: Implement Google Sign In
-        androidx.lifecycle.viewModelScope.launch {
+        viewModelScope.launch {
             kotlinx.coroutines.delay(1000)
             callback(true, null)
         }

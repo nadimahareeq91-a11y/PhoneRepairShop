@@ -66,3 +66,8 @@ google-services.json
 *.release.*
 # stray empty dirs created by tooling
 /storage
+
+# local toolchain (not part of the repo)
+/android-sdk/
+/.android/
+/buildenv.sh
