@@ -1,5 +1,6 @@
 package com.phonerepair.shop.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -39,6 +40,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextFieldColors
@@ -86,13 +88,13 @@ fun CustomButton(
             .fillMaxWidth()
             .height(52.dp),
         enabled = enabled && !isLoading,
-        colors = colors,
+        colors = colors ?: androidx.compose.material3.ButtonDefaults.buttonColors(),
         shape = shape
     ) {
         if (isLoading) {
             CircularProgressIndicator(
                 modifier = Modifier.size(24.dp),
-                color = colors?.contentColor?.value ?: Color.White
+                color = androidx.compose.material3.MaterialTheme.colorScheme.onPrimary
             )
         } else {
             Row(
@@ -249,7 +251,9 @@ fun CustomTextField(
         maxLines = maxLines,
         textStyle = textStyle ?: androidx.compose.material3.MaterialTheme.typography.bodyLarge,
         enabled = enabled,
-        colors = colors
+        colors = colors ?: androidx.compose.material3.OutlinedTextFieldDefaults.colors(
+            unfocusedContainerColor = androidx.compose.material3.MaterialTheme.colorScheme.surface
+        )
     )
 }
 
