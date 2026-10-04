@@ -29,20 +29,19 @@ jobs:
       if: always()
       run: |
         mkdir -p ci-logs
-        grep -vE '^\s*$' /tmp/build-debug.log > ci-logs/build-debug.log || true
+        grep -vE '^\s*$' /tmp/build-debug.log > ci-logs/build-debug.txt || true
         git config user.email "actions@github.com"
         git config user.name "github-actions"
-        git checkout -B ci-logs
-        git add ci-logs/build-debug.log
+        git add -f ci-logs/build-debug.txt
         git commit -m "ci: build log for ${GITHUB_SHA::8}" --allow-empty
-        git push --force origin ci-logs
+        git push --force origin HEAD:refs/heads/ci-logs
 
     - name: Upload Build Log
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: build-log
-        path: ci-logs/build-debug.log
+        path: ci-logs/build-debug.txt
 
     - name: Upload APK Artifact
       if: always()
