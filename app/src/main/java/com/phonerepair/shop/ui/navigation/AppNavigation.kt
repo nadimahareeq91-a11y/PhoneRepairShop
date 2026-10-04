@@ -41,7 +41,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.phonerepair.shop.ui.auth.AuthScreen
 import com.phonerepair.shop.ui.customers.CustomersScreen
 import com.phonerepair.shop.ui.dashboard.DashboardScreen
 import com.phonerepair.shop.ui.inventory.InventoryScreen
@@ -52,13 +51,6 @@ import com.phonerepair.shop.ui.settings.SettingsScreen
 
 @Composable
 fun MainScreen() {
-    var isLoggedIn by remember { mutableStateOf(false) }
-
-    if (!isLoggedIn) {
-        AuthScreen(onLoginSuccess = { isLoggedIn = true })
-        return
-    }
-
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = backStackEntry?.destination?.route
