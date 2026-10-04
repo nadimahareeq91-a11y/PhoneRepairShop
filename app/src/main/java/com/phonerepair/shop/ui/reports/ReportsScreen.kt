@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
@@ -66,6 +67,7 @@ fun ReportsScreen(
     var reportData by remember { mutableStateOf(ReportData.empty()) }
     var isLoading by remember { mutableStateOf(true) }
 
+    @Composable
     suspend fun loadReportData() {
         isLoading = true
         kotlinx.coroutines.delay(500)

@@ -485,7 +485,6 @@ data class QuickAction(
 )
 
 @Composable
-@Composable
 fun quickStats(): List<StatItem> = listOf(
     StatItem("طلبات اليوم", "12", Icons.Default.Assignment, MaterialTheme.colorScheme.primary),
     StatItem("قيد الإصلاح", "5", Icons.Default.Build, Color(0xFF3F51B5)),
