@@ -42,6 +42,7 @@ jobs:
 
       # Update versionCode and versionName in build.gradle.kts
       - name: 📝 Update Version
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           sed -i "s/versionCode = .*/versionCode = ${{ github.event.inputs.version_code }}/" app/build.gradle.kts
           sed -i "s/versionName = \".*\"/versionName = \"${{ github.event.inputs.version_name }}\"/" app/build.gradle.kts
