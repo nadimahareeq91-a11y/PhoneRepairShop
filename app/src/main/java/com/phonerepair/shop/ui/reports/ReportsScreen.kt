@@ -67,7 +67,6 @@ fun ReportsScreen(
     var reportData by remember { mutableStateOf(ReportData.empty()) }
     var isLoading by remember { mutableStateOf(true) }
 
-    @Composable
     suspend fun loadReportData() {
         isLoading = true
         kotlinx.coroutines.delay(500)
@@ -504,7 +503,6 @@ data class ReportData(
             customerStats = emptyMap()
         )
         
-        @Composable
         fun generateMockData(period: ReportPeriod): ReportData {
             val days = when (period) {
                 ReportPeriod.TODAY -> 1
@@ -540,7 +538,7 @@ data class ReportData(
                     ChartDataPoint("جاهز للاستلام", 42f, Color(0xFF2196F3)),
                     ChartDataPoint("بانتظار القطع", 28f, Color(0xFF9C27B0)),
                     ChartDataPoint("قيد التشخيص", 35f, Color(0xFFFF9800)),
-                    ChartDataPoint("ملغي", 12f, MaterialTheme.colorScheme.error),
+                    ChartDataPoint("ملغي", 12f, Color(0xFFF44336)),
                     ChartDataPoint("معلق", 13f, Color(0xFF607D8B))
                 ),
                 topSellingParts = listOf(
