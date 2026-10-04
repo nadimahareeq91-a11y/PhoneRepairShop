@@ -43,8 +43,9 @@ You can resolve this warning in Android Studio via `Refactor` > `Migrate BuildCo
 > Task :app:compressDebugAssets
 > Task :app:desugarDebugFileDependencies
 > Task :app:processDebugManifestForPackage
-> Task :app:checkDebugDuplicateClasses
 > Task :app:processDebugResources
+> Task :app:checkDebugDuplicateClasses
+> Task :app:kaptGenerateStubsDebugKotlin
 > Task :app:mergeExtDexDebug
 > Task :app:mergeDebugJniLibFolders FROM-CACHE
 > Task :app:mergeDebugNativeLibs NO-SOURCE
@@ -53,14 +54,11 @@ You can resolve this warning in Android Studio via `Refactor` > `Migrate BuildCo
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
-> Task :app:kaptGenerateStubsDebugKotlin
 > Task :app:kaptDebugKotlin
 
 > Task :app:compileDebugKotlin FAILED
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:488:1 This annotation is not repeatable
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:69:17 Functions which invoke @Composable functions must be marked with the @Composable annotation
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:72:33 @Composable invocations can only happen from the context of a @Composable function
-e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:235:16 Unresolved reference: GridCells
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:71:17 Composable function cannot be annotated as suspend
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:79:9 @Composable invocations can only happen from the context of a @Composable function
 
 FAILURE: Build failed with an exception.
 
@@ -75,5 +73,5 @@ Execution failed for task ':app:compileDebugKotlin'.
 > Run with --scan to get full insights.
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 3m 1s
+BUILD FAILED in 3m 18s
 30 actionable tasks: 28 executed, 2 from cache
