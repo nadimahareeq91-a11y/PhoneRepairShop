@@ -1,0 +1,295 @@
+Downloading https://services.gradle.org/distributions/gradle-8.5-bin.zip
+............10%.............20%............30%.............40%.............50%............60%.............70%.............80%............90%.............100%
+
+Welcome to Gradle 8.5!
+
+Here are the highlights of this release:
+ - Support for running on Java 21
+ - Faster first use with Kotlin DSL
+ - Improved error and warning messages
+
+For more details see https://docs.gradle.org/8.5/release-notes.html
+
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.5/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+WARNING: The option setting 'android.defaults.buildfeatures.buildconfig=true' is deprecated.
+The current default is 'false'.
+It will be removed in version 9.0 of the Android Gradle plugin.
+You can resolve this warning in Android Studio via `Refactor` > `Migrate BuildConfig to Gradle Build Files`
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :app:generateDebugBuildConfig
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:mergeDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets FROM-CACHE
+> Task :app:compressDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:mergeDebugJniLibFolders FROM-CACHE
+> Task :app:checkDebugDuplicateClasses
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeExtDexDebug
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeLibDexDebug
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:processDebugResources
+> Task :app:kaptGenerateStubsDebugKotlin
+> Task :app:kaptDebugKotlin
+
+> Task :app:compileDebugKotlin FAILED
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/data/local/Converters.kt:141:13 Unresolved reference: raw
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/data/local/Converters.kt:153:13 Unresolved reference: raw
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/data/local/Converters.kt:167:13 Unresolved reference: raw
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/data/local/Converters.kt:175:48 Unresolved reference: it
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/data/local/Converters.kt:175:70 Unresolved reference: it
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/auth/AuthScreen.kt:91:22 Unresolved reference: background
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/auth/AuthScreen.kt:98:22 Unresolved reference: widthIn
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/auth/AuthScreen.kt:336:9 Unresolved reference: viewModelScope
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/auth/AuthScreen.kt:337:32 Suspend function 'delay' should be called only from a coroutine or another suspend function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/auth/AuthScreen.kt:344:9 Unresolved reference: viewModelScope
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/auth/AuthScreen.kt:345:32 Suspend function 'delay' should be called only from a coroutine or another suspend function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/auth/AuthScreen.kt:352:9 Unresolved reference: viewModelScope
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/auth/AuthScreen.kt:353:32 Suspend function 'delay' should be called only from a coroutine or another suspend function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/components/CommonComponents.kt:89:18 Type mismatch: inferred type is ButtonColors? but ButtonColors was expected
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/components/CommonComponents.kt:95:25 Type mismatch: inferred type is Any but Color was expected
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/components/CommonComponents.kt:252:18 Type mismatch: inferred type is TextFieldColors? but TextFieldColors was expected
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/components/CommonComponents.kt:298:5 Unresolved reference: Surface
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/components/CommonComponents.kt:304:9 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/components/CommonComponents.kt:446:22 Unresolved reference: background
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/components/CommonComponents.kt:523:18 Unresolved reference: background
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/components/CommonComponents.kt:537:18 Unresolved reference: background
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:83:50 Unresolved reference: PersonAdd
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:94:53 Unresolved reference: Search
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:95:84 Unresolved reference: Clear
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:141:70 Unresolved reference: People
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:142:78 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:143:74 Unresolved reference: TrendingUp
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:144:65 Unresolved reference: Star
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:202:44 Unresolved reference: CircleAvatar
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:208:21 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:224:98 Unresolved reference: Star
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:227:99 Unresolved reference: NewLabel
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:230:114 Unresolved reference: Block
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:234:51 Unresolved reference: Phone
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:235:51 Unresolved reference: Email
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:238:51 Unresolved reference: ShoppingBag
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:239:51 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:240:51 Unresolved reference: Star
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:246:45 Unresolved reference: ChevronLeft
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/customers/CustomersScreen.kt:264:141 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:13:41 Unresolved reference: LazyHorizontalGrid
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:65:28 Suspend function 'delay' should be called only from a coroutine or another suspend function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:110:22 Unresolved reference: verticalScroll
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:133:46 Unresolved reference: Settings
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:148:27 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:156:17 Unresolved reference: LazyHorizontalGrid
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:163:21 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+public inline fun <T> LazyListScope.items(items: Array<TypeVariable(T)>, noinline key: ((item: TypeVariable(T)) -> Any)? = ..., noinline contentType: (item: TypeVariable(T)) -> Any? = ..., crossinline itemContent: LazyItemScope.(item: TypeVariable(T)) -> Unit): Unit defined in androidx.compose.foundation.lazy
+public inline fun <T> LazyListScope.items(items: List<TypeVariable(T)>, noinline key: ((item: TypeVariable(T)) -> Any)? = ..., noinline contentType: (item: TypeVariable(T)) -> Any? = ..., crossinline itemContent: LazyItemScope.(item: TypeVariable(T)) -> Unit): Unit defined in androidx.compose.foundation.lazy
+public inline fun <T> LazyGridScope.items(items: Array<TypeVariable(T)>, noinline key: ((item: TypeVariable(T)) -> Any)? = ..., noinline span: (LazyGridItemSpanScope.(item: TypeVariable(T)) -> GridItemSpan)? = ..., noinline contentType: (item: TypeVariable(T)) -> Any? = ..., crossinline itemContent: LazyGridItemScope.(item: TypeVariable(T)) -> Unit): Unit defined in androidx.compose.foundation.lazy.grid
+public inline fun <T> LazyGridScope.items(items: List<TypeVariable(T)>, noinline key: ((item: TypeVariable(T)) -> Any)? = ..., noinline span: (LazyGridItemSpanScope.(item: TypeVariable(T)) -> GridItemSpan)? = ..., noinline contentType: (item: TypeVariable(T)) -> Any? = ..., crossinline itemContent: LazyGridItemScope.(item: TypeVariable(T)) -> Unit): Unit defined in androidx.compose.foundation.lazy.grid
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:163:27 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:163:132 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:164:25 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:178:46 Unresolved reference: Inventory
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:307:57 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:352:57 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:403:38 Unresolved reference: Warning
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:468:49 Unresolved reference: Assignment
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:469:48 Unresolved reference: Build
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:470:50 Unresolved reference: CheckCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:471:59 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:472:58 Unresolved reference: Pending
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:473:47 Unresolved reference: Warning
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:474:53 Unresolved reference: People
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:475:48 Unresolved reference: TaskAlt
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:480:49 Unresolved reference: AddCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:481:45 Unresolved reference: AddBox
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:482:44 Unresolved reference: PersonAdd
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:483:47 Unresolved reference: ReceiptLong
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:484:45 Unresolved reference: QrCodeScanner
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/dashboard/DashboardScreen.kt:485:47 Unresolved reference: Print
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:169:58 Unresolved reference: CheckCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:170:55 Unresolved reference: Warning
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:171:43 Unresolved reference: Block
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:171:50 Type mismatch: inferred type is Color but ImageVector was expected
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:171:64 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:172:60 Unresolved reference: TrendingUp
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:218:54 Unresolved reference: QrCodeScanner
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:223:71 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+public val Icons.Outlined.FilterList: ImageVector defined in androidx.compose.material.icons.outlined
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:229:54 Unresolved reference: Add
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:241:53 Unresolved reference: Search
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:242:84 Unresolved reference: Clear
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:303:64 Unresolved reference: Inventory
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:304:75 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:305:67 Unresolved reference: Warning
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:306:69 Unresolved reference: Block
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:386:18 Unresolved reference: horizontalScroll
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:396:25 Cannot find a parameter with this name: selectedContainerColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:397:25 Cannot find a parameter with this name: selectedContentColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:398:25 Cannot find a parameter with this name: containerColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:399:25 Cannot find a parameter with this name: contentColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:443:139 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:459:35 Type mismatch: inferred type is Color but Int was expected
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:470:42 Unresolved reference: Inventory
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:476:42 Unresolved reference: ShoppingCart
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:481:42 Unresolved reference: Sell
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:487:42 Unresolved reference: Percent
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:499:50 Unresolved reference: LocalShipping
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:506:50 Unresolved reference: LocationOn
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:549:42 Unresolved reference: Visibility
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/inventory/InventoryScreen.kt:572:145 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:86:71 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+public val Icons.Outlined.FilterList: ImageVector defined in androidx.compose.material.icons.outlined
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:92:54 Unresolved reference: Add
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:104:53 Unresolved reference: Search
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:105:84 Unresolved reference: Clear
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:161:80 Unresolved reference: Receipt
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:162:70 Unresolved reference: CheckCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:163:70 Unresolved reference: Pending
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:164:66 Unresolved reference: Warning
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:224:18 Unresolved reference: horizontalScroll
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:234:25 Cannot find a parameter with this name: selectedContainerColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:235:25 Cannot find a parameter with this name: selectedContentColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:236:25 Cannot find a parameter with this name: containerColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:237:25 Cannot find a parameter with this name: contentColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:286:35 Type mismatch: inferred type is Color but Int was expected
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:296:47 Unresolved reference: Person
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:297:47 Unresolved reference: Phone
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:299:51 Unresolved reference: Build
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:309:42 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:315:42 Unresolved reference: Paid
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:321:42 Unresolved reference: MoneyOff
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:351:46 Unresolved reference: AddCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:362:42 Unresolved reference: Print
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:372:42 Unresolved reference: Visibility
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:390:145 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:405:33 Unresolved reference: Payments
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:406:33 Unresolved reference: CreditCard
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:407:42 Unresolved reference: AccountBalance
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:408:35 Unresolved reference: AccountBalanceWallet
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:409:41 Unresolved reference: CalendarMonth
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:410:31 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:426:80 Unresolved reference: Pending
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:427:88 Unresolved reference: RemoveCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:428:86 Unresolved reference: CheckCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:429:62 Unresolved reference: Error
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:429:69 Type mismatch: inferred type is Color but ImageVector was expected
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:429:83 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:430:82 Unresolved reference: MoneyOff
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/invoices/InvoicesScreen.kt:431:82 Unresolved reference: Cancel
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:21:35 Cannot access 'Chip': it is private in file
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:89:71 Unresolved reference. None of the following candidates is applicable because of receiver type mismatch: 
+public val Icons.Outlined.FilterList: ImageVector defined in androidx.compose.material.icons.outlined
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:95:54 Unresolved reference: Add
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:107:53 Unresolved reference: Search
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:108:84 Unresolved reference: Clear
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:202:17 Unresolved reference: FilterChip
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:212:21 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:233:17 Unresolved reference: FilterChip
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:243:21 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:287:46 Unresolved reference: Person
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:292:46 Unresolved reference: PhoneAndroid
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:299:46 Unresolved reference: Call
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:304:46 Unresolved reference: Schedule
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:317:160 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:326:50 Unresolved reference: Engineering
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:333:50 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:349:42 Unresolved reference: SwapVert
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:359:42 Unresolved reference: Visibility
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/repairs/RepairsScreen.kt:377:125 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:75:18 Unresolved reference: verticalScroll
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:193:14 Unresolved reference: horizontalScroll
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:215:86 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:216:78 Unresolved reference: Assignment
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:217:87 Unresolved reference: TrendingUp
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:218:82 Unresolved reference: CheckCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:219:74 Unresolved reference: PersonAdd
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:220:93 Unresolved reference: Star
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:223:38 Unresolved reference: LazyHorizontalGrid
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:224:49 Unresolved reference: GridCells
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:229:9 Unresolved reference: items
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:229:23 Cannot infer a type for this parameter. Please specify it explicitly.
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:230:13 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:282:75 Unresolved reference: TrendingUp
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:282:105 Unresolved reference: TrendingDown
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:373:107 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:390:107 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:440:38 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:494:13 Functions which invoke @Composable functions must be marked with the @Composable annotation
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/reports/ReportsScreen.kt:529:63 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:60:18 Unresolved reference: verticalScroll
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:78:42 Unresolved reference: Person
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:84:42 Unresolved reference: Palette
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:93:42 Unresolved reference: Language
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:102:42 Unresolved reference: Notifications
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:110:33 Cannot find a parameter with this name: thumbColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:111:33 Cannot find a parameter with this name: trackColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:122:42 Unresolved reference: Store
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:128:42 Unresolved reference: AttachMoney
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:134:42 Unresolved reference: Schedule
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:140:42 Unresolved reference: Verified
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:150:42 Unresolved reference: Print
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:155:104 Unresolved reference: CheckCircle
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:157:122 Unresolved reference: Block
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:163:42 Unresolved reference: Receipt
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:173:42 Unresolved reference: Backup
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:181:33 Cannot find a parameter with this name: thumbColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:182:33 Cannot find a parameter with this name: trackColor
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:189:42 Unresolved reference: CloudDownload
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:195:42 Unresolved reference: CloudUpload
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:201:42 Unresolved reference: DeleteForever
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:212:42 Unresolved reference: Warning
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:222:42 Unresolved reference: Info
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:228:42 Unresolved reference: Help
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:234:42 Unresolved reference: PrivacyTip
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:240:42 Unresolved reference: Description
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:250:42 Unresolved reference: Logout
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:257:42 Unresolved reference: DeleteForever
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:270:42 Unresolved reference: Save
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:311:14 Unresolved reference: background
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:312:9 Cannot find a parameter with this name: headContent
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:313:13 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:317:38 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:320:9 Cannot find a parameter with this name: content
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:321:13 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:323:152 Unresolved reference: TextOverflow
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:326:9 Cannot find a parameter with this name: tailContent
+e: file:///home/runner/work/PhoneRepairShop/PhoneRepairShop/app/src/main/java/com/phonerepair/shop/ui/settings/SettingsScreen.kt:326:9 No value passed for parameter 'headlineContent'
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 3m 9s
+30 actionable tasks: 28 executed, 2 from cache
