@@ -71,3 +71,9 @@ google-services.json
 /android-sdk/
 /.android/
 /buildenv.sh
+
+# local toolchain (not part of the repo)
+/android-sdk/
+/.android/
+/buildenv.sh
+/ci-logs/

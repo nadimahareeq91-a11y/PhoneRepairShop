@@ -8,8 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
     - name: Checkout Code
@@ -25,30 +23,9 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build Debug APK
-      run: ./gradlew assembleDebug --no-daemon 2>&1 | tee /tmp/build-debug.log; exit ${PIPESTATUS[0]}
-
-    - name: Publish Build Log
-      if: always()
-      continue-on-error: true
-      run: |
-        set -x
-        mkdir -p ci-logs
-        cp /tmp/build-debug.log ci-logs/build-debug.txt
-        git config user.email "actions@github.com"
-        git config user.name "github-actions"
-        git add -f ci-logs/build-debug.txt
-        git commit -m "ci: build log" --allow-empty
-        git push origin HEAD:refs/heads/main
-
-    - name: Upload Build Log
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-log
-        path: ci-logs/build-debug.txt
+      run: ./gradlew assembleDebug --no-daemon
 
     - name: Upload APK Artifact
-      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: PhoneRepairShop-debug-apk
