@@ -18,6 +18,9 @@ permissions:
 jobs:
   build-release:
     name: Build Signed Release APK
+    # Only ever run when dispatched manually. GitHub kept a stale trigger
+    # registration for this workflow, so guard the job explicitly.
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
